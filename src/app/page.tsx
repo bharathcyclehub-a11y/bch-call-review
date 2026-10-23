@@ -44,7 +44,7 @@ export default function HomePage() {
   const [showDroppedModal, setShowDroppedModal] = useState(false);
   const [droppedSearch, setDroppedSearch] = useState("");
 
-  // Load feedback from localStorage on mount
+  // Load feedback from localStorage & database on mount
   useEffect(() => {
     try {
       const stored = localStorage.getItem("bch_call_feedback_store");
@@ -54,6 +54,27 @@ export default function HomePage() {
     } catch (e) {
       console.error("Failed to load local feedback:", e);
     }
+
+    // Also fetch persisted feedback from database
+    fetch("/api/feedback")
+      .then((res) => (res.ok ? res.json() : null))
+      .then((json) => {
+        if (json && Array.isArray(json.feedback) && json.feedback.length > 0) {
+          setFeedbackMap((prev) => {
+            const merged = { ...prev };
+            for (const item of json.feedback) {
+              if (item?.call_id) {
+                merged[item.call_id] = item;
+              }
+            }
+            try {
+              localStorage.setItem("bch_call_feedback_store", JSON.stringify(merged));
+            } catch {}
+            return merged;
+          });
+        }
+      })
+      .catch((e) => console.warn("Could not sync remote feedback on mount:", e));
   }, []);
 
   // Fetch calls data

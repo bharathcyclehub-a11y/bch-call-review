@@ -1,8 +1,20 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { X, Star, Check, Sparkles, MessageSquare, AlertCircle } from "lucide-react";
+import {
+  X,
+  Star,
+  Check,
+  FileText,
+  ChevronDown,
+  ChevronUp,
+  Bot,
+  Radio,
+  ExternalLink,
+  Volume2,
+} from "lucide-react";
 import { CallRecord, FeedbackData, LeadTier } from "@/lib/types";
+import AudioPlayer from "./AudioPlayer";
 
 interface ReviewFeedbackModalProps {
   call: CallRecord;
@@ -46,6 +58,7 @@ export default function ReviewFeedbackModal({
   const [agentResponseNotes, setAgentResponseNotes] = useState(existingFeedback?.agent_response_notes || "");
   const [generalNotes, setGeneralNotes] = useState(existingFeedback?.general_notes || "");
   const [isSaving, setIsSaving] = useState(false);
+  const [showTranscript, setShowTranscript] = useState(false);
 
   useEffect(() => {
     if (existingFeedback) {
@@ -86,30 +99,135 @@ export default function ReviewFeedbackModal({
     onClose();
   };
 
+  const agentName = call.agent === "Bolna (Ananya)" ? "Ananya (Bolna)" : "AutoCall";
+
+  const renderTranscriptLines = (transcript: string) => {
+    const lines = transcript.split("\n").filter((l) => l.trim().length > 0);
+    return (
+      <div className="space-y-1.5 text-xs">
+        {lines.map((line, idx) => {
+          const isAssistant = line.toLowerCase().startsWith("assistant:") || line.toLowerCase().startsWith("agent:");
+          const isUser = line.toLowerCase().startsWith("user:") || line.toLowerCase().startsWith("customer:");
+          const content = line.replace(/^(assistant|agent|user|customer):\s*/i, "").trim();
+
+          if (!content) return null;
+
+          return (
+            <div
+              key={idx}
+              className={`p-2 rounded-lg border text-[11px] ${
+                isAssistant
+                  ? "bg-purple-950/40 border-purple-800/40 text-purple-200"
+                  : isUser
+                  ? "bg-slate-800/60 border-slate-700 text-slate-200"
+                  : "bg-slate-900 border-slate-800 text-slate-300"
+              }`}
+            >
+              <span className="font-bold text-[9px] uppercase tracking-wider block mb-0.5 text-slate-400">
+                {isAssistant ? "🤖 Ananya" : isUser ? "👤 Customer" : "Log"}
+              </span>
+              <p className="whitespace-pre-wrap leading-relaxed">{content}</p>
+            </div>
+          );
+        })}
+      </div>
+    );
+  };
+
   return (
     <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-end sm:items-center justify-center p-0 sm:p-4 animate-in fade-in duration-200">
-      <div className="bg-slate-900 border border-slate-800 rounded-t-2xl sm:rounded-2xl w-full max-w-lg max-h-[92vh] flex flex-col overflow-hidden shadow-2xl">
-        {/* Header */}
-        <div className="p-4 border-b border-slate-800 flex items-center justify-between shrink-0 bg-slate-950/50">
-          <div>
-            <div className="flex items-center gap-2">
-              <span className="font-semibold text-white text-base">Review Call</span>
-              <span className="text-xs px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 font-mono">
+      <div className="bg-slate-900 border border-slate-800 rounded-t-2xl sm:rounded-2xl w-full max-w-lg max-h-[94vh] flex flex-col overflow-hidden shadow-2xl">
+        
+        {/* Sticky Pinned Audio Player Header */}
+        <div className="p-3.5 sm:p-4 border-b border-slate-800 bg-slate-950/95 sticky top-0 z-20 shrink-0 space-y-2.5">
+          {/* Header Row: Title, Agent Badge, Duration, Close */}
+          <div className="flex items-center justify-between gap-2">
+            <div className="flex items-center gap-2 flex-wrap">
+              <span className="font-bold text-white text-base">Review Call</span>
+              {call.agent === "Bolna (Ananya)" ? (
+                <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-purple-500/20 text-purple-300 border border-purple-500/30 flex items-center gap-1">
+                  <Bot className="w-3 h-3 text-purple-400" />
+                  Bolna
+                </span>
+              ) : (
+                <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-sky-500/20 text-sky-300 border border-sky-500/30 flex items-center gap-1">
+                  <Radio className="w-3 h-3 text-sky-400" />
+                  AutoCall
+                </span>
+              )}
+              <span className="text-xs px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 font-mono font-bold">
                 {call.duration_formatted}
               </span>
             </div>
-            <p className="text-xs text-slate-400 mt-0.5 font-mono">{call.from_number}</p>
+
+            <button
+              onClick={onClose}
+              type="button"
+              className="h-8 w-8 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white flex items-center justify-center transition-colors shrink-0"
+            >
+              <X className="w-4 h-4" />
+            </button>
           </div>
-          <button
-            onClick={onClose}
-            type="button"
-            className="h-8 w-8 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white flex items-center justify-center transition-colors"
-          >
-            <X className="w-4 h-4" />
-          </button>
+
+          {/* Caller Details & Plivo Link */}
+          <div className="flex items-center justify-between text-xs text-slate-400 font-mono">
+            <span>{call.from_number}</span>
+            <div className="flex items-center gap-2">
+              <span>{call.date_formatted}</span>
+              {call.plivo_console_url && (
+                <a
+                  href={call.plivo_console_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-slate-400 hover:text-emerald-400 flex items-center gap-0.5 text-[10px]"
+                >
+                  <span>Plivo Log</span>
+                  <ExternalLink className="w-2.5 h-2.5" />
+                </a>
+              )}
+            </div>
+          </div>
+
+          {/* AUDIO PLAYER PINNED AT TOP OF MODAL */}
+          <div className="bg-slate-900/90 rounded-xl p-2 border border-slate-800">
+            <AudioPlayer
+              url={call.recording_url}
+              durationSeconds={call.duration_seconds}
+              callId={`modal-${call.id}`}
+            />
+          </div>
+
+          {/* Dialogue Transcript Toggle inside Modal (for Bolna calls) */}
+          {call.transcript && (
+            <div>
+              <button
+                onClick={() => setShowTranscript(!showTranscript)}
+                type="button"
+                className="w-full py-1.5 px-2.5 rounded-lg bg-purple-950/40 border border-purple-800/40 text-[11px] font-semibold text-purple-300 flex items-center justify-between hover:bg-purple-900/40 transition-colors"
+              >
+                <span className="flex items-center gap-1.5">
+                  <FileText className="w-3 h-3" />
+                  <span>{showTranscript ? "Hide Conversation Dialogue" : "Read Ananya Conversation Dialogue"}</span>
+                </span>
+                {showTranscript ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
+              </button>
+
+              {showTranscript && (
+                <div className="max-h-36 overflow-y-auto mt-2 p-2 rounded-lg bg-slate-950/90 border border-slate-800 space-y-1.5">
+                  {call.summary && (
+                    <div className="p-1.5 rounded bg-emerald-950/30 border border-emerald-800/40 text-[10px] text-emerald-300">
+                      <span className="font-bold">Summary: </span>
+                      {call.summary}
+                    </div>
+                  )}
+                  {renderTranscriptLines(call.transcript)}
+                </div>
+              )}
+            </div>
+          )}
         </div>
 
-        {/* Scrollable Body */}
+        {/* Scrollable Form Body */}
         <div className="p-4 overflow-y-auto space-y-4 flex-1">
           {/* 1. Lead Tier Selection */}
           <div>
@@ -135,10 +253,10 @@ export default function ReviewFeedbackModal({
             </div>
           </div>
 
-          {/* 2. Voice AI Star Rating */}
+          {/* 2. Voice AI Star Rating (Dynamic by Agent) */}
           <div>
             <label className="text-xs font-semibold text-slate-300 block mb-2 uppercase tracking-wider">
-              2. Voice Agent Quality (Ananya)
+              2. Voice Agent Quality ({agentName})
             </label>
             <div className="flex items-center gap-2 bg-slate-950/40 p-2.5 rounded-xl border border-slate-800">
               {[1, 2, 3, 4, 5].map((star) => (
@@ -146,10 +264,10 @@ export default function ReviewFeedbackModal({
                   key={star}
                   type="button"
                   onClick={() => setRating(star)}
-                  className="p-1.5 focus:outline-none transition-transform active:scale-125"
+                  className="p-1 focus:outline-none transition-transform active:scale-125"
                 >
                   <Star
-                    className={`w-7 h-7 ${
+                    className={`w-6 h-6 sm:w-7 sm:h-7 ${
                       star <= rating
                         ? "text-amber-400 fill-amber-400 drop-shadow"
                         : "text-slate-700 hover:text-slate-600"
@@ -208,7 +326,7 @@ export default function ReviewFeedbackModal({
             />
           </div>
 
-          {/* 5. What did Ananya say / Retraining notes */}
+          {/* 5. What did the agent say / Retraining notes */}
           <div>
             <label className="text-xs font-semibold text-slate-300 block mb-1">
               What did the agent say / Retraining note?
@@ -217,12 +335,12 @@ export default function ReviewFeedbackModal({
               rows={2}
               value={agentResponseNotes}
               onChange={(e) => setAgentResponseNotes(e.target.value)}
-              placeholder="e.g. She quoted Rs.75,000 correctly but interrupted the caller twice when they paused..."
+              placeholder="e.g. Quoted price correctly, but interrupted caller twice when they paused..."
               className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 resize-none"
             />
           </div>
 
-          {/* 6. General Feedback */}
+          {/* 6. Reviewer Next Steps */}
           <div>
             <label className="text-xs font-semibold text-slate-300 block mb-1">
               Reviewer Action / Next Steps
@@ -238,7 +356,7 @@ export default function ReviewFeedbackModal({
         </div>
 
         {/* Footer Actions */}
-        <div className="p-4 border-t border-slate-800 flex items-center justify-between gap-3 bg-slate-950/80 shrink-0">
+        <div className="p-3.5 sm:p-4 border-t border-slate-800 flex items-center justify-between gap-3 bg-slate-950/90 shrink-0">
           <button
             type="button"
             onClick={onClose}
