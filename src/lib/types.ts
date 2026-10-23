@@ -34,7 +34,7 @@ export interface CallerGroup {
   calls: CallRecord[];
 }
 
-export type LeadTier = "hot" | "warm" | "cold" | "service" | "spam" | "unreviewed";
+export type LeadTier = "hot" | "warm" | "cold" | "kids" | "service" | "spam" | "unreviewed";
 
 export interface FeedbackData {
   call_id: string;
@@ -42,9 +42,10 @@ export interface FeedbackData {
   lead_tier: LeadTier;
   agent_rating: number; // 1-5
   tags: string[]; // e.g. "Price Hallucination", "Interrupted Caller", "Script Glitch", "Great Empathy"
-  customer_query: string; // What caller asked
-  agent_response_notes: string; // How agent responded & what to fix
-  general_notes: string; // Reviewer feedback
+  feedback?: string; // Single comprehensive feedback box
+  customer_query?: string; // What caller asked (backward compat)
+  agent_response_notes?: string; // How agent responded (backward compat)
+  general_notes?: string; // Reviewer feedback (backward compat)
   reviewed_at: string;
   updated_at?: string;
   reviewed_by: string;

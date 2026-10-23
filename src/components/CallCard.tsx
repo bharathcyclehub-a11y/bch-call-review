@@ -47,6 +47,8 @@ export default function CallCard({ call, rank, feedback, onOpenReview }: CallCar
         return <span className="px-2 py-0.5 rounded-full text-[11px] font-semibold bg-amber-500/20 text-amber-400 border border-amber-500/30">⚡ Warm Lead</span>;
       case "cold":
         return <span className="px-2 py-0.5 rounded-full text-[11px] font-semibold bg-blue-500/20 text-blue-400 border border-blue-500/30">❄️ Cold Lead</span>;
+      case "kids":
+        return <span className="px-2 py-0.5 rounded-full text-[11px] font-semibold bg-pink-500/20 text-pink-300 border border-pink-500/30">🧒 Kids Cycle</span>;
       case "service":
         return <span className="px-2 py-0.5 rounded-full text-[11px] font-semibold bg-purple-500/20 text-purple-400 border border-purple-500/30">🛠️ Service/Repair</span>;
       case "spam":
@@ -56,7 +58,6 @@ export default function CallCard({ call, rank, feedback, onOpenReview }: CallCar
     }
   };
 
-  // Helper to render readable transcript dialogue
   const renderTranscriptLines = (transcript: string) => {
     const lines = transcript.split("\n").filter((l) => l.trim().length > 0);
     return (
@@ -89,6 +90,8 @@ export default function CallCard({ call, rank, feedback, onOpenReview }: CallCar
       </div>
     );
   };
+
+  const feedbackText = feedback?.feedback || feedback?.general_notes || feedback?.customer_query;
 
   return (
     <div className="bg-slate-900/90 border border-slate-800 hover:border-slate-700 rounded-2xl p-3.5 sm:p-4 shadow-sm flex flex-col gap-3 transition-colors">
@@ -209,14 +212,9 @@ export default function CallCard({ call, rank, feedback, onOpenReview }: CallCar
               </span>
             )}
           </div>
-          {feedback.customer_query && (
-            <p className="text-slate-300 line-clamp-1">
-              <span className="text-slate-400 font-semibold">Asked:</span> {feedback.customer_query}
-            </p>
-          )}
-          {feedback.agent_response_notes && (
-            <p className="text-emerald-400/90 line-clamp-1">
-              <span className="text-slate-400 font-semibold">Fix:</span> {feedback.agent_response_notes}
+          {feedbackText && (
+            <p className="text-slate-300 line-clamp-2">
+              <span className="text-slate-400 font-semibold">Feedback:</span> {feedbackText}
             </p>
           )}
         </div>

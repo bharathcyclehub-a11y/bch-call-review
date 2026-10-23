@@ -1,22 +1,22 @@
 "use client";
 
 import React from "react";
-import { PhoneCall, Users, Clock, CheckCircle2, Bot, Radio } from "lucide-react";
+import { PhoneCall, Clock, CheckCircle2, AlertCircle, Bot, Radio } from "lucide-react";
 
 interface StatsSummaryProps {
   totalCalls: number;
-  totalMinutes: number;
-  uniqueCallers: number;
+  pendingCount: number;
   reviewedCount: number;
+  totalMinutes: number;
   bolnaCount?: number;
   autoCallCount?: number;
 }
 
 export default function StatsSummary({
   totalCalls,
-  totalMinutes,
-  uniqueCallers,
+  pendingCount,
   reviewedCount,
+  totalMinutes,
   bolnaCount = 500,
   autoCallCount = 612,
 }: StatsSummaryProps) {
@@ -25,6 +25,7 @@ export default function StatsSummary({
   return (
     <div className="space-y-2">
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+        {/* Total Calls */}
         <div className="bg-slate-900/80 border border-slate-800 rounded-xl p-3 flex flex-col gap-1">
           <div className="flex items-center gap-1.5 text-slate-400 text-xs">
             <PhoneCall className="w-3.5 h-3.5 text-emerald-400" />
@@ -34,24 +35,17 @@ export default function StatsSummary({
           <span className="text-[10px] text-slate-500">Reviewable audio/text</span>
         </div>
 
-        <div className="bg-slate-900/80 border border-slate-800 rounded-xl p-3 flex flex-col gap-1">
-          <div className="flex items-center gap-1.5 text-slate-400 text-xs">
-            <Clock className="w-3.5 h-3.5 text-amber-400" />
-            <span>Talk Time</span>
+        {/* Pending Review Task Queue */}
+        <div className="bg-amber-950/20 border border-amber-800/40 rounded-xl p-3 flex flex-col gap-1">
+          <div className="flex items-center gap-1.5 text-amber-300 text-xs font-semibold">
+            <AlertCircle className="w-3.5 h-3.5 text-amber-400" />
+            <span>Pending Review</span>
           </div>
-          <p className="text-xl font-bold font-mono text-white">{hours} hrs</p>
-          <span className="text-[10px] text-slate-500">{Math.round(totalMinutes)} mins total</span>
+          <p className="text-xl font-bold font-mono text-amber-300">{pendingCount}</p>
+          <span className="text-[10px] text-amber-400/70">Task queue to clear</span>
         </div>
 
-        <div className="bg-slate-900/80 border border-slate-800 rounded-xl p-3 flex flex-col gap-1">
-          <div className="flex items-center gap-1.5 text-slate-400 text-xs">
-            <Users className="w-3.5 h-3.5 text-blue-400" />
-            <span>Unique Callers</span>
-          </div>
-          <p className="text-xl font-bold font-mono text-white">{uniqueCallers}</p>
-          <span className="text-[10px] text-slate-500">Grouped numbers</span>
-        </div>
-
+        {/* Reviewed Completed */}
         <div className="bg-slate-900/80 border border-slate-800 rounded-xl p-3 flex flex-col gap-1">
           <div className="flex items-center gap-1.5 text-slate-400 text-xs">
             <CheckCircle2 className="w-3.5 h-3.5 text-indigo-400" />
@@ -59,8 +53,18 @@ export default function StatsSummary({
           </div>
           <p className="text-xl font-bold font-mono text-white">{reviewedCount}</p>
           <span className="text-[10px] text-slate-500">
-            {totalCalls > 0 ? `${Math.round((reviewedCount / totalCalls) * 100)}% done` : "0%"}
+            {totalCalls > 0 ? `${((reviewedCount / totalCalls) * 100).toFixed(1)}% completed` : "0%"}
           </span>
+        </div>
+
+        {/* Talk Time */}
+        <div className="bg-slate-900/80 border border-slate-800 rounded-xl p-3 flex flex-col gap-1">
+          <div className="flex items-center gap-1.5 text-slate-400 text-xs">
+            <Clock className="w-3.5 h-3.5 text-sky-400" />
+            <span>Talk Time</span>
+          </div>
+          <p className="text-xl font-bold font-mono text-white">{hours} hrs</p>
+          <span className="text-[10px] text-slate-500">{Math.round(totalMinutes)} mins total</span>
         </div>
       </div>
 

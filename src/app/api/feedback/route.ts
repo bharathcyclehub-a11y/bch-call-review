@@ -35,18 +35,19 @@ export async function POST(request: Request) {
     }
 
     body.updated_at = new Date().toISOString();
+    const feedbackText = body.feedback || body.general_notes || body.customer_query || "";
 
     const pool = getDbPool();
     await pool.query(
       `
       INSERT INTO bch_call_reviews (
         call_id, phone_number, lead_tier, agent_rating, tags,
-        customer_query, agent_response_notes, general_notes,
+        customer_query, agent_response_notes, general_notes, feedback,
         updated_at, raw_feedback
       ) VALUES (
         $1, $2, $3, $4, $5,
-        $6, $7, $8,
-        NOW(), $9
+        $6, $7, $8, $9,
+        NOW(), $10
       )
       ON CONFLICT (call_id) DO UPDATE SET
         phone_number = EXCLUDED.phone_number,
@@ -56,6 +57,7 @@ export async function POST(request: Request) {
         customer_query = EXCLUDED.customer_query,
         agent_response_notes = EXCLUDED.agent_response_notes,
         general_notes = EXCLUDED.general_notes,
+        feedback = EXCLUDED.feedback,
         updated_at = NOW(),
         raw_feedback = EXCLUDED.raw_feedback;
       `,
@@ -65,9 +67,10 @@ export async function POST(request: Request) {
         body.lead_tier || "warm",
         body.agent_rating || 3,
         JSON.stringify(body.tags || []),
-        body.customer_query || "",
+        feedbackText,
         body.agent_response_notes || "",
-        body.general_notes || "",
+        feedbackText,
+        feedbackText,
         JSON.stringify(body),
       ]
     );

@@ -11,7 +11,6 @@ import {
   Bot,
   Radio,
   ExternalLink,
-  Volume2,
 } from "lucide-react";
 import { CallRecord, FeedbackData, LeadTier } from "@/lib/types";
 import AudioPlayer from "./AudioPlayer";
@@ -40,6 +39,7 @@ const LEAD_TIERS: { tier: LeadTier; label: string; icon: string; color: string }
   { tier: "hot", label: "Hot Lead", icon: "🔥", color: "bg-red-500/20 text-red-400 border-red-500/30" },
   { tier: "warm", label: "Warm Lead", icon: "⚡", color: "bg-amber-500/20 text-amber-400 border-amber-500/30" },
   { tier: "cold", label: "Cold Lead", icon: "❄️", color: "bg-blue-500/20 text-blue-400 border-blue-500/30" },
+  { tier: "kids", label: "Kids Cycle", icon: "🧒", color: "bg-pink-500/20 text-pink-300 border-pink-500/30" },
   { tier: "service", label: "Service / Repair", icon: "🛠️", color: "bg-purple-500/20 text-purple-400 border-purple-500/30" },
   { tier: "spam", label: "Spam / Wrong #", icon: "🚫", color: "bg-slate-700/50 text-slate-400 border-slate-600" },
 ];
@@ -54,9 +54,12 @@ export default function ReviewFeedbackModal({
   const [leadTier, setLeadTier] = useState<LeadTier>(existingFeedback?.lead_tier || "warm");
   const [rating, setRating] = useState<number>(existingFeedback?.agent_rating || 4);
   const [selectedTags, setSelectedTags] = useState<string[]>(existingFeedback?.tags || []);
-  const [customerQuery, setCustomerQuery] = useState(existingFeedback?.customer_query || "");
-  const [agentResponseNotes, setAgentResponseNotes] = useState(existingFeedback?.agent_response_notes || "");
-  const [generalNotes, setGeneralNotes] = useState(existingFeedback?.general_notes || "");
+  const [feedbackText, setFeedbackText] = useState(
+    existingFeedback?.feedback ||
+      existingFeedback?.general_notes ||
+      existingFeedback?.customer_query ||
+      ""
+  );
   const [isSaving, setIsSaving] = useState(false);
   const [showTranscript, setShowTranscript] = useState(false);
 
@@ -65,9 +68,12 @@ export default function ReviewFeedbackModal({
       setLeadTier(existingFeedback.lead_tier);
       setRating(existingFeedback.agent_rating);
       setSelectedTags(existingFeedback.tags || []);
-      setCustomerQuery(existingFeedback.customer_query || "");
-      setAgentResponseNotes(existingFeedback.agent_response_notes || "");
-      setGeneralNotes(existingFeedback.general_notes || "");
+      setFeedbackText(
+        existingFeedback.feedback ||
+          existingFeedback.general_notes ||
+          existingFeedback.customer_query ||
+          ""
+      );
     }
   }, [existingFeedback]);
 
@@ -87,10 +93,11 @@ export default function ReviewFeedbackModal({
       lead_tier: leadTier,
       agent_rating: rating,
       tags: selectedTags,
-      customer_query: customerQuery,
-      agent_response_notes: agentResponseNotes,
-      general_notes: generalNotes,
-      reviewed_at: new Date().toISOString(),
+      feedback: feedbackText,
+      customer_query: feedbackText,
+      general_notes: feedbackText,
+      reviewed_at: existingFeedback?.reviewed_at || new Date().toISOString(),
+      updated_at: new Date().toISOString(),
       reviewed_by: "Owner Review",
     };
 
@@ -229,7 +236,7 @@ export default function ReviewFeedbackModal({
 
         {/* Scrollable Form Body */}
         <div className="p-4 overflow-y-auto space-y-4 flex-1">
-          {/* 1. Lead Tier Selection */}
+          {/* 1. Lead Tier Selection (Including Kids Cycle) */}
           <div>
             <label className="text-xs font-semibold text-slate-300 block mb-2 uppercase tracking-wider">
               1. Mark Lead Status
@@ -312,45 +319,17 @@ export default function ReviewFeedbackModal({
             </div>
           </div>
 
-          {/* 4. What did customer ask? */}
+          {/* 4. Single Feedback Box (Replaced 3 boxes) */}
           <div>
-            <label className="text-xs font-semibold text-slate-300 block mb-1">
-              What did the customer ask?
-            </label>
-            <input
-              type="text"
-              value={customerQuery}
-              onChange={(e) => setCustomerQuery(e.target.value)}
-              placeholder="e.g. EMotorad Viper Rs.999 EMI, delivery to Mysore, kids cycle..."
-              className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500"
-            />
-          </div>
-
-          {/* 5. What did the agent say / Retraining notes */}
-          <div>
-            <label className="text-xs font-semibold text-slate-300 block mb-1">
-              What did the agent say / Retraining note?
+            <label className="text-xs font-semibold text-slate-300 block mb-1.5 uppercase tracking-wider">
+              4. Feedback & Notes
             </label>
             <textarea
-              rows={2}
-              value={agentResponseNotes}
-              onChange={(e) => setAgentResponseNotes(e.target.value)}
-              placeholder="e.g. Quoted price correctly, but interrupted caller twice when they paused..."
-              className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 resize-none"
-            />
-          </div>
-
-          {/* 6. Reviewer Next Steps */}
-          <div>
-            <label className="text-xs font-semibold text-slate-300 block mb-1">
-              Reviewer Action / Next Steps
-            </label>
-            <input
-              type="text"
-              value={generalNotes}
-              onChange={(e) => setGeneralNotes(e.target.value)}
-              placeholder="e.g. Send WhatsApp catalog; Sales manager to call tomorrow morning"
-              className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500"
+              rows={4}
+              value={feedbackText}
+              onChange={(e) => setFeedbackText(e.target.value)}
+              placeholder="Type your feedback here (e.g. Customer asking for 20-inch kids cycle with gear; agent quoted wrong price; follow up on WhatsApp with catalog)..."
+              className="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 resize-none leading-relaxed"
             />
           </div>
         </div>

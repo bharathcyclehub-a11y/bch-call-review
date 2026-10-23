@@ -2,9 +2,7 @@
 
 import React, { useState, useEffect, useMemo } from "react";
 import {
-  PhoneCall,
   Search,
-  Filter,
   RefreshCw,
   Clock,
   Users,
@@ -12,16 +10,15 @@ import {
   CheckCircle,
   HelpCircle,
   AlertTriangle,
-  ChevronDown,
-  ChevronUp,
   X,
   Phone,
   MessageCircle,
   Bot,
   Radio,
   Flame,
+  CheckCircle2,
 } from "lucide-react";
-import { CallRecord, CallerGroup, CallsApiResponse, FeedbackData, DroppedCall } from "@/lib/types";
+import { CallRecord, CallsApiResponse, FeedbackData, DroppedCall } from "@/lib/types";
 import StatsSummary from "@/components/StatsSummary";
 import CallCard from "@/components/CallCard";
 import CallerGroupCard from "@/components/CallerGroupCard";
@@ -114,19 +111,32 @@ export default function HomePage() {
     }).catch(console.error);
   };
 
+  const reviewedCount = Object.keys(feedbackMap).length;
+  const totalCalls = data?.total_calls || 0;
+  const pendingCount = Math.max(0, totalCalls - reviewedCount);
+
   const reviewedCallsList = useMemo(() => {
     if (!data) return [];
     const reviewedIds = new Set(Object.keys(feedbackMap));
     return data.longest_calls.filter((c) => reviewedIds.has(c.id));
   }, [data, feedbackMap]);
 
-  // Filtered Calls for Longest / Recent tabs
+  // Filtered Calls for Longest / Recent / Reviewed tabs
   const filteredCalls = useMemo(() => {
     if (!data) return [];
-    let list = activeTab === "recent" ? data.recent_calls : data.longest_calls;
+    let list: CallRecord[] = [];
 
     if (activeTab === "reviewed") {
+      // Show ALL reviewed calls
       list = reviewedCallsList;
+    } else if (activeTab === "longest") {
+      // TASK QUEUE: Longest calls that are PENDING REVIEW (unreviewed)
+      list = data.longest_calls.filter((c) => !feedbackMap[c.id]);
+    } else if (activeTab === "recent") {
+      // Recent calls that are PENDING REVIEW
+      list = data.recent_calls.filter((c) => !feedbackMap[c.id]);
+    } else {
+      list = data.longest_calls;
     }
 
     // 1. Agent Filter
@@ -211,13 +221,13 @@ export default function HomePage() {
         </button>
       </header>
 
-      {/* Stats Summary Bar */}
+      {/* Stats Summary Bar: Total, Pending Review (Task), Reviewed, Talk Time */}
       {data && (
         <StatsSummary
           totalCalls={data.total_calls}
+          pendingCount={pendingCount}
+          reviewedCount={reviewedCount}
           totalMinutes={data.total_duration_minutes}
-          uniqueCallers={data.unique_callers_count}
-          reviewedCount={Object.keys(feedbackMap).length}
           bolnaCount={data.bolna_count}
           autoCallCount={data.autocall_count}
         />
@@ -300,27 +310,55 @@ export default function HomePage() {
         </button>
       </div>
 
-      {/* Search Input */}
-      <div className="relative">
-        <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
-        <input
-          type="search"
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-          placeholder="Search phone number (e.g. 9449, 9008)..."
-          className="w-full bg-slate-900 border border-slate-800 rounded-xl pl-10 pr-4 py-2.5 text-xs sm:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 shadow-inner"
-        />
-        {searchQuery && (
-          <button
-            onClick={() => setSearchQuery("")}
-            className="text-xs text-slate-400 hover:text-white absolute right-3 top-1/2 -translate-y-1/2 px-1"
-          >
-            Clear
-          </button>
-        )}
+      {/* Search Input & Lead Tier Filter */}
+      <div className="flex flex-col gap-2">
+        <div className="relative">
+          <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+          <input
+            type="search"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            placeholder="Search phone number (e.g. 9449, 9008)..."
+            className="w-full bg-slate-900 border border-slate-800 rounded-xl pl-10 pr-4 py-2.5 text-xs sm:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 shadow-inner"
+          />
+          {searchQuery && (
+            <button
+              onClick={() => setSearchQuery("")}
+              className="text-xs text-slate-400 hover:text-white absolute right-3 top-1/2 -translate-y-1/2 px-1"
+            >
+              Clear
+            </button>
+          )}
+        </div>
+
+        {/* Lead Tier filter pills */}
+        <div className="flex items-center gap-1 overflow-x-auto pb-1 text-[11px] font-medium no-scrollbar">
+          {[
+            { id: "all", label: "All Tiers" },
+            { id: "hot", label: "🔥 Hot" },
+            { id: "warm", label: "⚡ Warm" },
+            { id: "kids", label: "🧒 Kids" },
+            { id: "cold", label: "❄️ Cold" },
+            { id: "service", label: "🛠️ Service" },
+            { id: "spam", label: "🚫 Spam" },
+          ].map((t) => (
+            <button
+              key={t.id}
+              type="button"
+              onClick={() => setSelectedTierFilter(t.id)}
+              className={`px-2.5 py-1 rounded-lg border whitespace-nowrap transition-colors ${
+                selectedTierFilter === t.id
+                  ? "bg-slate-700 border-slate-500 text-white font-semibold"
+                  : "bg-slate-900 border-slate-800 text-slate-400 hover:text-slate-300"
+              }`}
+            >
+              {t.label}
+            </button>
+          ))}
+        </div>
       </div>
 
-      {/* Tabs Row */}
+      {/* Task Queue Tabs: Longest (Pending), Repeaters, Recent (Pending), Reviewed */}
       <div className="grid grid-cols-4 gap-1 bg-slate-900/90 p-1 rounded-xl border border-slate-800 text-xs font-semibold">
         <button
           onClick={() => {
@@ -328,7 +366,7 @@ export default function HomePage() {
             setVisibleCount(25);
           }}
           type="button"
-          className={`py-2 rounded-lg transition-all text-center flex flex-col items-center gap-0.5 ${
+          className={`py-2 rounded-lg transition-all text-center flex flex-col items-center gap-0.5 relative ${
             activeTab === "longest"
               ? "bg-emerald-600 text-white shadow-sm font-bold"
               : "text-slate-400 hover:text-slate-200"
@@ -336,6 +374,7 @@ export default function HomePage() {
         >
           <Clock className="w-3.5 h-3.5" />
           <span>Longest</span>
+          <span className="text-[9px] opacity-80 font-mono">Pending</span>
         </button>
 
         <button
@@ -352,6 +391,7 @@ export default function HomePage() {
         >
           <Users className="w-3.5 h-3.5" />
           <span>Repeaters</span>
+          <span className="text-[9px] opacity-80 font-mono">Clusters</span>
         </button>
 
         <button
@@ -368,6 +408,7 @@ export default function HomePage() {
         >
           <Flame className="w-3.5 h-3.5" />
           <span>Recent</span>
+          <span className="text-[9px] opacity-80 font-mono">Pending</span>
         </button>
 
         <button
@@ -384,23 +425,27 @@ export default function HomePage() {
         >
           <CheckCircle className="w-3.5 h-3.5" />
           <span>Reviewed</span>
-          {Object.keys(feedbackMap).length > 0 && (
-            <span className="absolute top-1 right-2 px-1 rounded-full text-[9px] bg-amber-400 text-slate-950 font-bold">
-              {Object.keys(feedbackMap).length}
+          {reviewedCount > 0 ? (
+            <span className="px-1.5 rounded-full text-[9px] bg-amber-400 text-slate-950 font-bold">
+              {reviewedCount}
             </span>
+          ) : (
+            <span className="text-[9px] opacity-80 font-mono">0</span>
           )}
         </button>
       </div>
 
-      {/* Subheader & Export action */}
+      {/* Subheader & Task Count */}
       <div className="flex items-center justify-between text-xs text-slate-400 px-1">
         <span>
           {activeTab === "repeat"
             ? `Showing ${filteredGroups.length} repeat caller clusters`
-            : `Showing ${Math.min(visibleCount, filteredCalls.length)} of ${filteredCalls.length} calls`}
+            : activeTab === "reviewed"
+            ? `Showing ${filteredCalls.length} reviewed calls`
+            : `Showing ${Math.min(visibleCount, filteredCalls.length)} of ${filteredCalls.length} pending calls`}
         </span>
 
-        {Object.keys(feedbackMap).length > 0 && (
+        {reviewedCount > 0 && (
           <button
             onClick={exportFeedbackJSON}
             type="button"
@@ -446,16 +491,27 @@ export default function HomePage() {
           )}
         </div>
       ) : (
-        // Individual Calls View (Longest, Recent, Reviewed)
+        // Individual Calls View (Longest Pending, Recent Pending, Reviewed)
         <div className="space-y-3">
           {filteredCalls.length === 0 ? (
-            <div className="py-12 text-center text-slate-500 text-xs flex flex-col items-center gap-2">
-              <HelpCircle className="w-6 h-6 text-slate-600" />
-              <span>
-                {activeTab === "reviewed"
-                  ? "You haven't reviewed any calls yet. Tap 'Review Lead' on any call card to start!"
-                  : "No calls found matching your query."}
-              </span>
+            <div className="py-16 text-center text-slate-500 text-xs flex flex-col items-center gap-2">
+              {activeTab === "longest" && pendingCount === 0 ? (
+                <>
+                  <CheckCircle2 className="w-8 h-8 text-emerald-400" />
+                  <span className="text-sm font-semibold text-white">All Longest Calls Reviewed!</span>
+                  <span className="text-slate-400">Great job! You have cleared all pending longest calls.</span>
+                </>
+              ) : activeTab === "reviewed" ? (
+                <>
+                  <HelpCircle className="w-6 h-6 text-slate-600" />
+                  <span>You haven't reviewed any calls yet. Tap 'Review Lead' on any call card to start!</span>
+                </>
+              ) : (
+                <>
+                  <HelpCircle className="w-6 h-6 text-slate-600" />
+                  <span>No calls found matching your query.</span>
+                </>
+              )}
             </div>
           ) : (
             filteredCalls.slice(0, visibleCount).map((call, idx) => (
