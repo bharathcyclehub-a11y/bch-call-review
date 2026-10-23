@@ -1,0 +1,2984 @@
+[
+  {
+    "id": "26d2312d-6b8a-4f71-a403-a6542c73d681",
+    "user_number": "+919632728795",
+    "created_at": "2026-10-21T08:38:50.862326+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "0394ce6f-069b-4660-af61-1874f5046164",
+    "user_number": "+916363271310",
+    "created_at": "2026-10-21T08:18:32.081232+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "ec19886b-2b0d-4db2-adf0-5c91f90c4678",
+    "user_number": "+919535911147",
+    "created_at": "2026-10-21T08:17:47.597172+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "ea4a8d73-49aa-4f15-817a-bfbbe3d1bcb1",
+    "user_number": "+918197242725",
+    "created_at": "2026-10-21T08:13:07.640353+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "1be5b89f-8d45-426c-b23a-c2cd9731a434",
+    "user_number": "+916363271310",
+    "created_at": "2026-10-21T07:58:03.333008+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "2600c287-6956-4f38-b161-39472e7c4cef",
+    "user_number": "+916363271310",
+    "created_at": "2026-10-21T07:57:44.528312+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "971849dd-641e-4bf8-af63-166c51c2653d",
+    "user_number": "+916363271310",
+    "created_at": "2026-10-21T07:57:16.903596+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "1659e633-7219-4979-a382-81c0456e7bdd",
+    "user_number": "+919740811386",
+    "created_at": "2026-10-21T07:57:10.940449+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "cb0de3f1-b63e-436d-8530-b1f0434f9d86",
+    "user_number": "+919740811386",
+    "created_at": "2026-10-21T07:52:30.124634+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "deccf4c7-6ac3-4a60-9a0d-68904d456ec0",
+    "user_number": "+919740811386",
+    "created_at": "2026-10-21T07:51:01.883431+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "f071ff31-8cb7-49c3-9673-a44f1cd6eb44",
+    "user_number": "+919622773769",
+    "created_at": "2026-10-21T07:50:56.854042+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "bd6afea7-6001-4b6c-8507-af411292dcac",
+    "user_number": "+919740811386",
+    "created_at": "2026-10-21T07:46:42.096344+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "47cc86dd-8567-4314-9834-b18e02833037",
+    "user_number": "+919622773769",
+    "created_at": "2026-10-21T07:42:29.745929+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "de639907-0028-49d3-af99-07bb82d17945",
+    "user_number": "+917760687519",
+    "created_at": "2026-10-21T07:42:04.843416+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "7750cefe-0d0e-4407-af6f-0eb5568212a5",
+    "user_number": "+919611535150",
+    "created_at": "2026-10-21T07:23:00.987848+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "e7bad223-1034-4c5a-87d4-9b9f38886f8d",
+    "user_number": "+919611535150",
+    "created_at": "2026-10-21T07:22:40.516194+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "fcdc8fda-5abc-4b95-9c06-c392c1c8065d",
+    "user_number": "+919606850839",
+    "created_at": "2026-10-21T05:55:26.125475+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "e79e6506-23df-495c-8665-1b4e078a781d",
+    "user_number": "+919606850839",
+    "created_at": "2026-10-21T04:49:29.463495+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "1cc6f278-2363-47cd-87b0-0a4d1c876a0c",
+    "user_number": "+919902402563",
+    "created_at": "2026-10-21T04:41:18.228790+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "6b5f9d66-ac38-437b-8231-470798e706ea",
+    "user_number": "+917019579712",
+    "created_at": "2026-10-21T04:39:00.677677+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "68e06025-651f-4a21-8f79-39cffcef418e",
+    "user_number": "+917019579712",
+    "created_at": "2026-10-21T04:38:53.565700+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "f98e3993-32f5-46fb-9e23-d94829fe4374",
+    "user_number": "+917019579712",
+    "created_at": "2026-10-21T04:38:39.704570+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "98fcfa0b-7503-4623-947f-44646c3032d6",
+    "user_number": "+917019579712",
+    "created_at": "2026-10-21T04:38:17.291110+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "3ba03cf3-8927-47c7-80c9-8683d5d1cb44",
+    "user_number": "+919902402563",
+    "created_at": "2026-10-21T04:38:08.840707+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "3f1086a5-2640-488b-b778-e5246ff23885",
+    "user_number": "+919902402563",
+    "created_at": "2026-10-21T04:38:06.080549+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "387defd4-f72c-42c8-b40e-9674a6c39637",
+    "user_number": "+919902402563",
+    "created_at": "2026-10-21T04:37:37.557940+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "8afaa0be-9981-4ff4-8432-dba1822144af",
+    "user_number": "+919902402563",
+    "created_at": "2026-10-21T04:37:25.008015+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "9e1b8715-a9d1-40a5-96c0-0f3598074324",
+    "user_number": "+918495901000",
+    "created_at": "2026-10-21T04:24:48.611865+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "18aa8008-1129-4986-8218-93ce41d40108",
+    "user_number": "+918495901000",
+    "created_at": "2026-10-21T04:24:42.076771+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "9a7be750-2e73-47ce-ab2f-c699cb757bfc",
+    "user_number": "+918495901000",
+    "created_at": "2026-10-21T04:24:30.738503+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "57afdd69-c7ce-4b8c-8ee6-42cb5519992a",
+    "user_number": "+919307831322",
+    "created_at": "2026-10-21T04:17:35.762354+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "69751bc7-967f-4764-b27a-2c6ed5173bb7",
+    "user_number": "+919307831322",
+    "created_at": "2026-10-21T04:16:49.294217+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "10467596-f765-4e90-af77-2988056c5455",
+    "user_number": "+919535911147",
+    "created_at": "2026-10-21T04:16:11.196898+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "4d8fcf4b-0299-4630-a6e3-a671e88cf88c",
+    "user_number": "+919535911147",
+    "created_at": "2026-10-21T04:15:44.358857+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "79ba4c71-6639-465e-9b4d-f0c068656e3d",
+    "user_number": "+919535911147",
+    "created_at": "2026-10-21T04:15:40.716081+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "06d89613-f4eb-4219-891a-b71a8bbd9fe9",
+    "user_number": "+917019579712",
+    "created_at": "2026-10-21T04:06:59.353378+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "d8124922-e0ed-41d8-8cb5-17e24b47ac25",
+    "user_number": "+917019579712",
+    "created_at": "2026-10-21T04:06:50.938801+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "de05ab6a-4c40-4416-b091-0347a3dc0d1e",
+    "user_number": "+917019579712",
+    "created_at": "2026-10-21T04:06:39.807071+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "d3948e1d-7179-4bf2-8d39-69a88d453bdb",
+    "user_number": "+917019579712",
+    "created_at": "2026-10-21T04:06:12.575995+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "ccbb2159-6e5e-4cdc-9fa3-8825b61c331b",
+    "user_number": "+918971513662",
+    "created_at": "2026-10-21T03:41:20.276380+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "df32c38c-01db-484a-beae-ba4c76b5fa1c",
+    "user_number": "+918088339696",
+    "created_at": "2026-10-21T03:27:34.995612+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "e6feee87-f517-455e-ba40-1b0983342d0b",
+    "user_number": "+917019579712",
+    "created_at": "2026-10-21T03:22:01.839527+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "d1b0f4c1-de02-488d-a823-c59cb3e16121",
+    "user_number": "+917019579712",
+    "created_at": "2026-10-21T03:21:35.140178+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "5dbefbb0-aa5b-4709-b02f-680979709301",
+    "user_number": "+917019579712",
+    "created_at": "2026-10-21T03:21:18.145870+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "b3f9b1b9-7c83-4178-a63d-0c51c3abcf78",
+    "user_number": "+917019579712",
+    "created_at": "2026-10-21T03:21:03.708365+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "36b323c3-5120-4df6-90f8-d7dc7337e118",
+    "user_number": "+919606781946",
+    "created_at": "2026-10-21T03:16:38.528442+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "4e9438b3-27a2-47a0-bca6-d74ca1428aa0",
+    "user_number": "+919606781946",
+    "created_at": "2026-10-21T03:16:01.436095+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "239ca366-d857-4388-a90d-a99d785fd591",
+    "user_number": "+918867447525",
+    "created_at": "2026-10-21T01:49:45.214726+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "a5c1693c-915f-454d-a99c-bc6f2180dfb6",
+    "user_number": "+918792758138",
+    "created_at": "2026-10-20T16:56:51.893176+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "1a106e82-b1e9-486e-93c2-35c650ae7769",
+    "user_number": "+918792758138",
+    "created_at": "2026-10-20T16:56:45.988490+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "e498f3e1-85f1-4e47-9c69-7fe66e6d14ef",
+    "user_number": "+918792758138",
+    "created_at": "2026-10-20T16:31:50.500606+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "75cd9351-e2f2-4206-ba34-1617a2b88efb",
+    "user_number": "+918792758138",
+    "created_at": "2026-10-20T16:31:45.303493+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "d0254d0b-2592-4c1f-b644-caa3807d71e4",
+    "user_number": "+918792758138",
+    "created_at": "2026-10-20T16:31:39.665523+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "75e8f869-bbbe-4d15-9519-9a268906f1db",
+    "user_number": "+918792758138",
+    "created_at": "2026-10-20T16:31:36.480103+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "3020b9ce-518f-48fe-9e05-e860cbd1e5a9",
+    "user_number": "+918792758138",
+    "created_at": "2026-10-20T16:31:32.217756+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "c00beb00-6bc7-4f6e-b626-1da3dce66efe",
+    "user_number": "+918792758138",
+    "created_at": "2026-10-20T16:31:26.288591+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "e73c47c6-a590-48c9-b8d4-484ba0b627b8",
+    "user_number": "+918792758138",
+    "created_at": "2026-10-20T16:31:17.398026+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "cdf5d7aa-7c1c-4ba4-b2fd-ce914917d6df",
+    "user_number": "+919535830107",
+    "created_at": "2026-10-20T16:16:53.028902+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "8fe99171-3aec-4a28-bde6-9c1255c274f9",
+    "user_number": "+919535830107",
+    "created_at": "2026-10-20T16:16:23.651767+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "467f8348-1a3c-45b7-bae1-389ecafc288b",
+    "user_number": "+918970252805",
+    "created_at": "2026-10-20T15:07:21.296954+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "7325a034-5736-47dd-8f1c-d2feda6729b5",
+    "user_number": "+919036538334",
+    "created_at": "2026-10-20T14:59:05.784087+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "ab0aab82-a326-4ee1-925e-6761776efede",
+    "user_number": "+918970252805",
+    "created_at": "2026-10-20T14:58:15.020061+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "9e5ddd01-dc37-4d05-a4ae-6e832fbc5ccb",
+    "user_number": "+918970252805",
+    "created_at": "2026-10-20T14:53:28.203685+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "5825f5fd-be25-40fd-a8c9-2242d5fcbddb",
+    "user_number": "+918970252805",
+    "created_at": "2026-10-20T14:53:09.713491+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "e7da69a6-9da4-4abb-8a0b-0358d88aa944",
+    "user_number": "+919071389711",
+    "created_at": "2026-10-20T14:37:40.119978+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "7de1f20e-59a5-40f8-adde-843a438a0cf2",
+    "user_number": "+919900651017",
+    "created_at": "2026-10-20T14:37:35.407413+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "f33b176f-2b03-4a79-8e9d-9540d807b05a",
+    "user_number": "+919900651017",
+    "created_at": "2026-10-20T14:37:21.587458+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "47f4b616-99a5-42f1-a592-0d07df62b217",
+    "user_number": "+919611524399",
+    "created_at": "2026-10-20T14:36:05.412958+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "f44a2422-01ab-4a01-b3e2-6523b1537a4a",
+    "user_number": "+917676536256",
+    "created_at": "2026-10-20T14:11:55.217046+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "65e70b44-2b58-4e02-a1e4-08f2e955d4d9",
+    "user_number": "+917676536256",
+    "created_at": "2026-10-20T13:53:24.001120+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "a9cc753d-53d0-404b-9ab3-3bd98ae3faba",
+    "user_number": "+917676536256",
+    "created_at": "2026-10-20T13:32:16.421440+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "0e25cc89-f594-474c-95e8-e9513941eb44",
+    "user_number": "+917676536256",
+    "created_at": "2026-10-20T13:31:40.003331+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "cdfb358b-a08b-4bf7-bf23-5e2b46d96593",
+    "user_number": "+918897539379",
+    "created_at": "2026-10-20T12:34:59.621348+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "a88ac2a1-85fa-4bb4-8247-1137ee55510f",
+    "user_number": "+918897539379",
+    "created_at": "2026-10-20T12:34:34.537235+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "8e333156-5170-4ca2-9ddf-580915f04fa0",
+    "user_number": "+918897539379",
+    "created_at": "2026-10-20T12:34:21.585826+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "05f07fd7-b90d-4df6-896e-3f4159c64d13",
+    "user_number": "+918897539379",
+    "created_at": "2026-10-20T12:33:56.159879+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "de66fa52-a334-4033-9f74-59ef44873a3b",
+    "user_number": "+918897539379",
+    "created_at": "2026-10-20T12:33:44.016184+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "86463595-3ee1-4f2f-86f8-9607739d045d",
+    "user_number": "+918897539379",
+    "created_at": "2026-10-20T12:33:34.951041+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "834ae2d0-1eb3-4935-916d-3de38e269013",
+    "user_number": "+918897539379",
+    "created_at": "2026-10-20T12:32:04.110925+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "357c6d52-d01f-4ed1-8da1-d13f351a86cd",
+    "user_number": "+919505625766",
+    "created_at": "2026-10-20T12:31:23.634693+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "e94f8f51-fd23-4b9c-a226-1ff161803e45",
+    "user_number": "+919505625766",
+    "created_at": "2026-10-20T12:31:05.766141+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "114af11b-a21d-47f4-8ead-655991d5a333",
+    "user_number": "+919505625766",
+    "created_at": "2026-10-20T12:30:51.393993+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "6ade72d4-8fe5-432e-ba87-3e3dd0a57dfe",
+    "user_number": "+919533912312",
+    "created_at": "2026-10-20T11:32:37.599499+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "f7632ffb-d7ca-4a98-8619-29ab2d99540d",
+    "user_number": "+919743737161",
+    "created_at": "2026-10-20T11:26:04.672672+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "ff4fa43d-f02c-4f08-98ad-0f5ffb265bf7",
+    "user_number": "+919743737161",
+    "created_at": "2026-10-20T11:25:38.610773+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "e8af5b16-d139-44bb-824b-ca2d6d4199f2",
+    "user_number": "+918639470977",
+    "created_at": "2026-10-20T11:15:46.532367+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "052315e7-c318-48ce-bbf0-1f990b548d17",
+    "user_number": "+917337806386",
+    "created_at": "2026-10-20T10:47:22.260774+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "604b0c17-cd8d-4e71-87b8-8b2f4bb5cf7a",
+    "user_number": "+918792818725",
+    "created_at": "2026-10-20T10:41:19.184289+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "d57925bb-2d05-4a5a-9a6c-c57042d9c6a4",
+    "user_number": "+919010419594",
+    "created_at": "2026-10-20T10:18:14.516874+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "afe50d10-151c-4f8e-95d8-01b996a79134",
+    "user_number": "+919010419594",
+    "created_at": "2026-10-20T10:17:54.304904+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "c0a4e779-8c37-4e96-95a6-f56eaa63d227",
+    "user_number": "+919676157666",
+    "created_at": "2026-10-20T10:00:15.547169+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "91ba9320-f3f2-4678-8d5c-d5664003ad49",
+    "user_number": "+919845479149",
+    "created_at": "2026-10-20T09:42:30.247469+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "bdabfd75-7ed1-4ddb-b9ea-f8c07317eec0",
+    "user_number": "+919502890086",
+    "created_at": "2026-10-20T09:37:50.120769+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "95ac3f95-203d-46d3-9722-8ff079bcb54e",
+    "user_number": "+919502890086",
+    "created_at": "2026-10-20T09:36:22.821441+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "183dd7ac-c089-4f99-b1bf-4e0072267002",
+    "user_number": "+919632605563",
+    "created_at": "2026-10-20T09:13:11.566391+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "c62f2868-9009-456d-bcf9-87abbc06c8ba",
+    "user_number": "+917676509933",
+    "created_at": "2026-10-20T09:07:40.018796+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "6e682e74-6451-4294-a2f7-0a2785490035",
+    "user_number": "+919164067284",
+    "created_at": "2026-10-20T09:05:29.029425+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "13a9a01e-b3dd-4571-8583-724f7a9ebf1f",
+    "user_number": "+919164067284",
+    "created_at": "2026-10-20T09:05:09.139684+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "d68983ec-c638-4d27-9f5d-4918f87e5263",
+    "user_number": "+918310057157",
+    "created_at": "2026-10-20T08:35:13.615991+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "b15cfc15-b974-46df-be46-fc02e16a398f",
+    "user_number": "+917090851456",
+    "created_at": "2026-10-20T07:54:36.443290+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "62cb3cb1-b045-4f8e-8887-75b5417abea1",
+    "user_number": "+919739016753",
+    "created_at": "2026-10-20T07:54:28.010552+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "f6be32d1-6348-4cd3-81b7-4d7fa58bda0e",
+    "user_number": "+919739016753",
+    "created_at": "2026-10-20T07:54:20.939254+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "6009400d-2096-4d4c-92a5-22f5069fa887",
+    "user_number": "+918792818725",
+    "created_at": "2026-10-20T07:53:58.786859+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "2602b67e-e471-48ff-9904-b8e947c710ee",
+    "user_number": "+918792818725",
+    "created_at": "2026-10-20T07:44:51.388123+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "818c2762-a332-4080-8eef-b15353776ad3",
+    "user_number": "+918792818725",
+    "created_at": "2026-10-20T07:44:25.705936+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "9263cbcd-9ea2-4fa7-970f-ee682928e5d8",
+    "user_number": "+919959443500",
+    "created_at": "2026-10-20T07:41:31.349306+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "302a2210-c3a3-4b41-a805-bb6a0ac9ea08",
+    "user_number": "+918792818725",
+    "created_at": "2026-10-20T07:41:29.055688+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "067ee2f0-546b-41ea-abc5-24957e8df8fc",
+    "user_number": "+918792818725",
+    "created_at": "2026-10-20T07:41:14.190484+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "4c092798-fd4b-4224-ae4f-c3c5eb963689",
+    "user_number": "+918792818725",
+    "created_at": "2026-10-20T07:40:58.268252+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "a5634821-974a-465d-9f9d-9782e741e4ff",
+    "user_number": "+918792818725",
+    "created_at": "2026-10-20T07:40:47.083582+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "09d12d4c-12cd-46c3-aeef-2027938dfaa3",
+    "user_number": "+919035231225",
+    "created_at": "2026-10-20T06:57:36.315155+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "fe46a12d-3e34-4b0b-9fcb-e3d305c26ddd",
+    "user_number": "+918951456090",
+    "created_at": "2026-10-20T06:49:48.684939+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "16ad981c-021e-40b7-b915-bba8be29a5b3",
+    "user_number": "+919635692219",
+    "created_at": "2026-10-20T06:30:14.638809+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "35a769fd-a4cd-44c9-8861-e0c8c89e222f",
+    "user_number": "+919635692219",
+    "created_at": "2026-10-20T06:30:06.132838+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "267a9c50-9650-4ce0-8070-cd93f36089ed",
+    "user_number": "+919635692219",
+    "created_at": "2026-10-20T06:29:42.519372+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "3cc68e3e-bff9-4a84-a171-2616f767aec4",
+    "user_number": "+919591488332",
+    "created_at": "2026-10-20T05:58:52.176011+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "fc888f15-3950-4126-b0c8-8e56f6b501d9",
+    "user_number": "+918971165891",
+    "created_at": "2026-10-20T05:49:55.947638+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "55c21604-4fe1-4363-bdbf-19d811dcd45a",
+    "user_number": "+919148034417",
+    "created_at": "2026-10-20T05:48:48.754193+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "b75777fa-e515-4ffc-a81a-85fd07c59bd8",
+    "user_number": "+919380251535",
+    "created_at": "2026-10-20T05:40:53.532835+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "ff4e74ee-fd22-486b-af23-bf7888fd376b",
+    "user_number": "+918971165891",
+    "created_at": "2026-10-20T05:40:06.295734+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "3e0a0cfb-d8be-4001-abf6-250680ab3095",
+    "user_number": "+918971165891",
+    "created_at": "2026-10-20T05:39:49.876069+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "49d394c9-0207-4670-a551-bbf06138ccff",
+    "user_number": "+919980101735",
+    "created_at": "2026-10-20T05:38:35.888604+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "b795a32d-8dad-4714-bd35-8880e0a85104",
+    "user_number": "+918951238740",
+    "created_at": "2026-10-20T05:36:15.051528+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "4abf1f1a-62f0-439c-b09b-bbcd874f0991",
+    "user_number": "+918095207369",
+    "created_at": "2026-10-20T04:36:45.593151+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "a5cc884b-c1b8-4d7a-84a0-b83ebda4cbb9",
+    "user_number": "+917760687519",
+    "created_at": "2026-10-20T04:25:28.212876+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "dce63f60-f392-4b2d-8d53-3780a5d1afca",
+    "user_number": "+917760687519",
+    "created_at": "2026-10-20T04:24:38.409725+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "54ba5b8d-7be5-45b1-91ad-412fd2fce324",
+    "user_number": "+917760687519",
+    "created_at": "2026-10-20T04:24:23.915759+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "d80a993f-f7e6-41b2-8a0b-1452d35ec8fd",
+    "user_number": "+917899262057",
+    "created_at": "2026-10-20T04:17:26.405860+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "b4a9a65b-1adf-4ae0-bc7b-a5a1730303ca",
+    "user_number": "+917899262057",
+    "created_at": "2026-10-20T04:14:14.891789+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "c6fed987-b751-4276-8292-06488deb5a3f",
+    "user_number": "+917899262057",
+    "created_at": "2026-10-20T04:13:47.808317+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "fd5c164b-f57a-42f8-8889-1a05fa882904",
+    "user_number": "+917899262057",
+    "created_at": "2026-10-20T04:13:20.044044+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "9800c9fe-5e87-40d9-a562-cce7fd78a32c",
+    "user_number": "+919632597251",
+    "created_at": "2026-10-20T03:58:35.601387+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "ea60cf29-0186-4b6a-981d-0d905f72fc28",
+    "user_number": "+919591488332",
+    "created_at": "2026-10-20T03:35:47.574245+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "bbc5524f-c1e0-4eea-b8f0-ff17885c51e7",
+    "user_number": "+919591488332",
+    "created_at": "2026-10-20T03:30:53.511459+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "12be6b63-76f9-43a4-a34a-29cdbc73e3aa",
+    "user_number": "+919591488332",
+    "created_at": "2026-10-20T03:29:09.386328+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "7e67244e-0afa-4a79-8f10-d7f3bebd18f8",
+    "user_number": "+919591488332",
+    "created_at": "2026-10-20T03:28:34.570207+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "fa5063c2-a5b6-4cde-af3d-e22301e42af0",
+    "user_number": "+919591488332",
+    "created_at": "2026-10-20T03:27:58.253543+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "92337da6-ed18-41ae-b79d-f13d08d81e90",
+    "user_number": "+919113823250",
+    "created_at": "2026-10-20T03:12:04.026207+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "3b5bf6b5-4a04-405d-92f0-fc6cfcf580b7",
+    "user_number": "+918296147218",
+    "created_at": "2026-10-20T03:04:28.836005+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "227efbe5-5a2f-4e46-b749-2779590331a4",
+    "user_number": "+919606078938",
+    "created_at": "2026-10-20T03:04:15.865138+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "a1d2cbd8-73aa-467e-987a-9457f4fa3b84",
+    "user_number": "+919606078938",
+    "created_at": "2026-10-20T03:04:03.384612+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "f826422f-1910-4ea7-b857-83074239ff0f",
+    "user_number": "+919035260841",
+    "created_at": "2026-10-20T02:59:29.174195+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "1df4b3e5-fe44-4cc4-bdf5-726d78d39512",
+    "user_number": "+919035260841",
+    "created_at": "2026-10-20T02:59:09.016043+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "4fc8c269-e26f-4a4d-95f0-dd4e6209270f",
+    "user_number": "+919632178368",
+    "created_at": "2026-10-20T02:37:55.445085+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "0f642dde-8214-490c-a2e0-97d2c48898c7",
+    "user_number": "+917760687519",
+    "created_at": "2026-10-20T02:34:53.315965+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "8dacfd38-2534-4285-b0eb-417bc4f6c6f0",
+    "user_number": "+917760687519",
+    "created_at": "2026-10-20T02:34:36.911885+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "e2bedb6b-45bb-4c36-a70c-4b42bfdd0e3a",
+    "user_number": "+917760687519",
+    "created_at": "2026-10-20T02:34:21.483801+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "3dda5138-e78a-405d-b571-dee8ed054f15",
+    "user_number": "+918867495785",
+    "created_at": "2026-10-20T02:22:15.433708+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "5ce08b61-cdd4-49fc-8cb0-f2ee2fed0cb4",
+    "user_number": "+919743360030",
+    "created_at": "2026-10-20T02:01:38.409889+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "1cd5a14b-1ebc-4cea-9b5f-ae342632dfa6",
+    "user_number": "+919740716051",
+    "created_at": "2026-10-19T16:47:58.044147+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "8c8347bd-f077-43e1-88ad-1d48bbf34d1a",
+    "user_number": "+916363429249",
+    "created_at": "2026-10-19T15:34:35.059735+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "e49141c4-d2d9-4390-8748-a31d91f3815b",
+    "user_number": "+917337806386",
+    "created_at": "2026-10-19T14:53:55.932862+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "267048c9-325c-468a-9689-8a10cd17c062",
+    "user_number": "+918296956538",
+    "created_at": "2026-10-19T14:32:17.130201+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "dfd74a80-b38d-4b46-9788-49c0590c8fa0",
+    "user_number": "+918296956538",
+    "created_at": "2026-10-19T14:31:59.863468+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "3b5eb30e-ab6a-4999-b4b9-3851a677ca44",
+    "user_number": "+919164458784",
+    "created_at": "2026-10-19T14:21:47.007655+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "8ed7f813-ce80-442d-bb1e-ec3575a171f0",
+    "user_number": "+917207606692",
+    "created_at": "2026-10-19T14:15:00.288729+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "1c588181-b34f-4f01-964a-b31f5db65281",
+    "user_number": "+919148034417",
+    "created_at": "2026-10-19T14:02:38.733047+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "c9d28cf5-13a7-4903-944a-b98cd6ceb131",
+    "user_number": "+918296147218",
+    "created_at": "2026-10-19T13:39:40.321034+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "7df96b57-aafc-434e-9878-1eadf6aa8e4d",
+    "user_number": "+917349438522",
+    "created_at": "2026-10-19T13:34:24.826224+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "a33bb6c3-a462-451e-85a1-6a1446f4dad1",
+    "user_number": "+919380182989",
+    "created_at": "2026-10-19T13:34:15.943937+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "26273113-4e43-48f6-a781-33d496a2635b",
+    "user_number": "+917349438522",
+    "created_at": "2026-10-19T13:34:15.801548+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "65b65bd8-5758-4b07-996b-de9ea54b3ee8",
+    "user_number": "+917349438522",
+    "created_at": "2026-10-19T13:34:10.965645+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "7a138a4f-5600-4edf-8f09-5e7a888a039f",
+    "user_number": "+917349438522",
+    "created_at": "2026-10-19T13:34:06.013890+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "01872b84-9183-4c3c-b652-1ffce5561b6c",
+    "user_number": "+917349438522",
+    "created_at": "2026-10-19T13:33:59.330581+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "d808a253-2ed9-4eb1-9ec1-700802173591",
+    "user_number": "+917349438522",
+    "created_at": "2026-10-19T13:33:53.314714+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "e091607d-d0ee-48cf-8201-2d49ae761f83",
+    "user_number": "+919148023080",
+    "created_at": "2026-10-19T13:28:22.006685+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "b301a96b-bc14-44fb-b338-bad859d2fda7",
+    "user_number": "+919148023080",
+    "created_at": "2026-10-19T13:27:56.160867+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "f1f07187-7ad5-49b1-a475-e0651c72a7db",
+    "user_number": "+919148023080",
+    "created_at": "2026-10-19T13:27:44.613414+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "bc0c36d4-2cb4-4492-92d6-fed2d9fc7f3a",
+    "user_number": "+919148023080",
+    "created_at": "2026-10-19T13:27:07.647575+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "71f31801-e6c4-4cb7-8ba5-9b875f538e69",
+    "user_number": "+916361023468",
+    "created_at": "2026-10-19T13:26:41.722095+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "9d432756-1324-432a-8c3b-a4a978f0d2d1",
+    "user_number": "+917349438522",
+    "created_at": "2026-10-19T13:24:31.132557+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "397cf8eb-c0e9-48f1-9291-61e1af260da6",
+    "user_number": "+918296147218",
+    "created_at": "2026-10-19T13:24:03.119018+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "928f1f96-5b05-4090-9a1c-230c814d4558",
+    "user_number": "+917349438522",
+    "created_at": "2026-10-19T13:21:44.262835+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "3b1bd337-145f-4a07-9f3e-53c8426f668f",
+    "user_number": "+917349438522",
+    "created_at": "2026-10-19T13:20:38.071315+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "cd6fcb21-00ba-44fe-bd50-5d8fde65a01b",
+    "user_number": "+917975866042",
+    "created_at": "2026-10-19T13:19:25.477287+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "75c88178-a9ee-4e6d-ad96-8c33cbb35f79",
+    "user_number": "+917349438522",
+    "created_at": "2026-10-19T13:19:11.192638+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "4651d7cb-3e46-49a4-91ba-4664a7dd8ada",
+    "user_number": "+917349438522",
+    "created_at": "2026-10-19T13:18:05.671117+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "fce68f66-7f64-4d1c-8c4d-ed3cad0bf873",
+    "user_number": "+918660025964",
+    "created_at": "2026-10-19T13:17:55.686299+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "e7263529-c131-4274-8f11-8fd8fe96aa57",
+    "user_number": "+918660025964",
+    "created_at": "2026-10-19T13:03:09.198963+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "38786283-8d07-4b10-b658-d80ed2c8eb5a",
+    "user_number": "+918660025964",
+    "created_at": "2026-10-19T13:01:42.309631+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "ea62a625-8100-4bd0-86ab-ea645dc59d37",
+    "user_number": "+918660025964",
+    "created_at": "2026-10-19T12:59:30.128717+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "955cec6d-94e9-475c-9757-6ba81e2f9a85",
+    "user_number": "+918867111583",
+    "created_at": "2026-10-19T12:32:05.052271+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "d90905f6-148d-4e06-93fb-bf94ef912e8c",
+    "user_number": "+919242157716",
+    "created_at": "2026-10-19T12:30:18.038822+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "241a21d9-9b46-4eda-aedb-68137713c70e",
+    "user_number": "+919242157716",
+    "created_at": "2026-10-19T12:29:44.304982+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "81a6922f-7d84-4e1e-a81a-e0d53fd44282",
+    "user_number": "+918095207369",
+    "created_at": "2026-10-19T11:41:09.928813+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "88e0484d-2417-4b0a-8a25-bcb52ed92253",
+    "user_number": "+918106400350",
+    "created_at": "2026-10-19T11:29:17.243002+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "f0b75b9c-502e-4e7a-b144-a4a56e455dbc",
+    "user_number": "+919591488332",
+    "created_at": "2026-10-19T11:03:28.884027+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "1b111c4e-c291-47d6-9c5c-533d1752c3d2",
+    "user_number": "+919591488332",
+    "created_at": "2026-10-19T11:00:05.307046+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "37e9dc6f-e4b2-456a-89f4-6abccac1eb2d",
+    "user_number": "+919591488332",
+    "created_at": "2026-10-19T10:59:40.028357+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "35f6f5b6-f1b5-46a7-8114-9f15eae78593",
+    "user_number": "+919591488332",
+    "created_at": "2026-10-19T10:58:22.607694+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "63a900f9-9782-4cbc-b6a0-daf2f02f0515",
+    "user_number": "+919591488332",
+    "created_at": "2026-10-19T10:57:43.694860+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "9db0c223-24aa-4f24-b20f-853b057e61fd",
+    "user_number": "+918122641315",
+    "created_at": "2026-10-19T10:46:49.741917+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "c4542f05-e98d-4d74-9d7c-a3d4d2b26a1c",
+    "user_number": "+918122641315",
+    "created_at": "2026-10-19T10:46:23.991851+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "8fe4e91c-999b-43d1-a3e6-68cd5860675f",
+    "user_number": "+919880152262",
+    "created_at": "2026-10-19T10:24:05.199392+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "eda1f25f-2824-4ef5-b06e-f400f4bef63a",
+    "user_number": "+919880152262",
+    "created_at": "2026-10-19T10:23:56.562861+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "9d36d7f0-8bfa-4290-b1a6-536a38db0980",
+    "user_number": "+918069758043",
+    "created_at": "2026-10-19T10:22:29.205282+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "317fa45d-49ed-413d-8e84-3bb882584ad4",
+    "user_number": "+918069758043",
+    "created_at": "2026-10-19T10:18:20.213905+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "54302fbc-e100-4754-89cc-279cacf5139c",
+    "user_number": "+917094343985",
+    "created_at": "2026-10-19T10:16:07.142850+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "77bd34e6-f0a3-4ccc-8b90-7fbb70bf8028",
+    "user_number": "+919019718008",
+    "created_at": "2026-10-19T09:58:55.450844+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "48bc6e74-1c5b-4a84-89e1-6b880f7658e9",
+    "user_number": "+918904294689",
+    "created_at": "2026-10-19T09:36:10.186405+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "340639d6-af3b-4c41-a114-38eb7067ba75",
+    "user_number": "+916360272808",
+    "created_at": "2026-10-19T09:07:58.456906+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "0df3a0c2-5e08-48f9-9850-ea041f4f1701",
+    "user_number": "+919148034417",
+    "created_at": "2026-10-19T08:48:46.533821+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "8686c6b3-e3e2-45e0-9ded-5e4379b0c2b3",
+    "user_number": "+919008085001",
+    "created_at": "2026-10-19T08:25:19.641545+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "0d78ba1d-e019-4cb6-9a4d-dd05de63c260",
+    "user_number": "+919533912312",
+    "created_at": "2026-10-19T08:04:26.082717+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "51d049bf-8133-4b87-9260-91efddd6fb79",
+    "user_number": "+919035088109",
+    "created_at": "2026-10-19T07:56:21.668141+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "a846aa0a-5d39-419c-9374-8e87db3ec521",
+    "user_number": "+919182799528",
+    "created_at": "2026-10-19T06:44:29.455319+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "4b780688-0f61-47c1-9b9d-ed100a44e550",
+    "user_number": "+918431758805",
+    "created_at": "2026-10-19T06:40:33.759648+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "75c83954-b67d-4b4a-bd1a-9a451ae0e377",
+    "user_number": "+919182799528",
+    "created_at": "2026-10-19T06:40:08.046716+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "d134dc50-11b3-4882-8542-4c6f5dc4de4d",
+    "user_number": "+919591488332",
+    "created_at": "2026-10-19T06:27:53.735488+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "48120d8a-6156-446a-a96c-6ba866520d39",
+    "user_number": "+919591488332",
+    "created_at": "2026-10-19T06:26:45.064041+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "b06423ad-7f06-4d47-8630-35aadf59508f",
+    "user_number": "+919591488332",
+    "created_at": "2026-10-19T06:26:27.438464+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "67ef5e34-73ac-47c6-a004-8c756125c104",
+    "user_number": "+919591488332",
+    "created_at": "2026-10-19T06:23:43.132519+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "1770e7d7-62a1-4764-b246-8eb8b4ba7c98",
+    "user_number": "+919591488332",
+    "created_at": "2026-10-19T06:22:13.038461+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "97d64883-a196-4918-b9e9-521442a68c24",
+    "user_number": "+919964644121",
+    "created_at": "2026-10-19T06:03:32.187292+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "ed40c699-d62f-42c6-932d-2077fffcfe97",
+    "user_number": "+919964644121",
+    "created_at": "2026-10-19T05:57:23.763808+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "d2552209-8cf1-4338-b9ec-79a3a92340b5",
+    "user_number": "+919964644121",
+    "created_at": "2026-10-19T05:52:48.513759+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "74cc4734-e626-46df-90b1-dae6dd19c930",
+    "user_number": "+919964644121",
+    "created_at": "2026-10-19T05:52:15.843298+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "9c53c6e8-c714-4f97-9259-c6fdddb969d3",
+    "user_number": "+919900281188",
+    "created_at": "2026-10-19T05:44:27.345709+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "1994cbd4-89b9-49ba-a0d9-f567de2ae78f",
+    "user_number": "+918884715519",
+    "created_at": "2026-10-19T05:37:34.593848+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "e272c8a4-3e6c-4bbe-99cb-8ae038cd1412",
+    "user_number": "+918884715519",
+    "created_at": "2026-10-19T05:30:10.825543+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "dbdf951e-2737-44c4-a8c0-409e3f600d1b",
+    "user_number": "+919741731407",
+    "created_at": "2026-10-19T04:43:30.978495+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "336db94b-b8b6-4c94-b6c5-7cff05d3550d",
+    "user_number": "+918884715519",
+    "created_at": "2026-10-19T04:41:56.155542+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "66574bb4-72b4-4642-a667-77b945133949",
+    "user_number": "+919964644121",
+    "created_at": "2026-10-19T04:33:49.347390+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "049bc7ce-f189-44ba-85b3-5e705fc54626",
+    "user_number": "+919964644121",
+    "created_at": "2026-10-19T04:32:22.048225+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "07fd6946-874c-4129-81bb-e68f6f65bf67",
+    "user_number": "+918088981733",
+    "created_at": "2026-10-19T04:32:08.066740+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "3532b0b1-0333-4cd3-9683-ceb28434a4a2",
+    "user_number": "+919964644121",
+    "created_at": "2026-10-19T04:31:33.489607+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "98703ffe-7689-4146-b740-19b73e2b8ef1",
+    "user_number": "+919008085001",
+    "created_at": "2026-10-19T04:29:41.628343+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "cef5f40d-4d50-43db-9182-49c54136eaca",
+    "user_number": "+919591488332",
+    "created_at": "2026-10-19T04:23:00.804379+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "cf4e63c5-5c14-4a50-9c35-6a0340b9e072",
+    "user_number": "+919008085001",
+    "created_at": "2026-10-19T04:21:59.395349+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "1b902961-1004-4b0b-af50-1f011e6dabfb",
+    "user_number": "+919182799528",
+    "created_at": "2026-10-19T03:59:51.947519+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "1dee0c59-6ffd-4d2e-99b5-cb58ad8ae6d4",
+    "user_number": "+917348870090",
+    "created_at": "2026-10-19T03:58:20.127569+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "e265d971-d8cf-45c8-9503-26475b5a2352",
+    "user_number": "+919663387023",
+    "created_at": "2026-10-19T03:57:31.811064+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "010bfe64-e29e-41d2-bf6b-0bd2509a6976",
+    "user_number": "+918431323398",
+    "created_at": "2026-10-19T03:49:49.862188+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "219cd035-bb0c-4c7f-8629-d31fd8feb85f",
+    "user_number": "+916360287765",
+    "created_at": "2026-10-19T03:42:30.022718+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "990adead-66ef-4980-8ce3-f46ad78efa17",
+    "user_number": "+916360287765",
+    "created_at": "2026-10-19T03:42:24.980217+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "8e32339b-e9ea-46dd-b82b-f6ad0f4da267",
+    "user_number": "+916360287765",
+    "created_at": "2026-10-19T03:42:18.566834+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "9f6cdc65-edf3-49cd-82dc-eb1c78e11e96",
+    "user_number": "+916360287765",
+    "created_at": "2026-10-19T03:42:11.316078+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "4c343747-a46f-4095-afde-fd1d21d2776d",
+    "user_number": "+916360287765",
+    "created_at": "2026-10-19T03:42:02.307839+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "9bbae9f3-3eca-44c8-87b7-d85e86b5f069",
+    "user_number": "+919591488332",
+    "created_at": "2026-10-19T03:39:12.650937+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "07c3fc8b-fb33-4b28-a807-47d4b634080f",
+    "user_number": "+919591488332",
+    "created_at": "2026-10-19T03:37:31.907479+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "bbc79aad-e6be-4251-ae4c-327322fcfcfd",
+    "user_number": "+919591488332",
+    "created_at": "2026-10-19T03:36:39.588624+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "0a3483aa-0484-45d5-af89-bd1a7b15c572",
+    "user_number": "+919591488332",
+    "created_at": "2026-10-19T03:35:44.171168+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "835a2fec-cbf9-4ced-b407-925f0c449dcc",
+    "user_number": "+919591488332",
+    "created_at": "2026-10-19T03:34:48.609799+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "49119ef7-c00f-4cd0-bc6c-28e08f7bdbb8",
+    "user_number": "+919591488332",
+    "created_at": "2026-10-19T03:34:02.010640+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "e32d5e8e-9104-495b-b99b-b3afc5abe442",
+    "user_number": "+919591488332",
+    "created_at": "2026-10-19T03:29:57.907642+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "7f43d121-5f83-4edc-bb3a-e8567560b3b5",
+    "user_number": "+919591488332",
+    "created_at": "2026-10-19T03:29:44.086635+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "40949ef4-8b95-4838-b694-eefd9e1d6b8b",
+    "user_number": "+919591488332",
+    "created_at": "2026-10-19T03:26:48.205150+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "e327cc19-1f42-42bd-a959-731e331bc3bd",
+    "user_number": "+919591488332",
+    "created_at": "2026-10-19T03:26:28.566914+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "423eab8b-da37-4233-9139-5dd75fdf38f1",
+    "user_number": "+919591488332",
+    "created_at": "2026-10-19T03:25:48.616742+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "5e1ce8e1-16fb-460b-a8c1-8dc9d87c8ae7",
+    "user_number": "+919591488332",
+    "created_at": "2026-10-19T03:25:02.646996+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "2ee28abf-33d8-45ee-bcbf-0ca21833e4af",
+    "user_number": "+919591488332",
+    "created_at": "2026-10-19T03:24:32.422502+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "cc5c9d3b-b494-4289-a910-c30034e0a79c",
+    "user_number": "+918431323398",
+    "created_at": "2026-10-19T03:19:51.883170+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "241c6afe-308d-4e77-aabd-09add0e060db",
+    "user_number": "+919591488332",
+    "created_at": "2026-10-19T03:07:44.733772+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "eb775b56-c8de-425a-a790-8a8764f8f7f4",
+    "user_number": "+919182799528",
+    "created_at": "2026-10-19T02:56:22.480975+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "2c2629f5-0d5e-4872-9ce9-e4af6748d517",
+    "user_number": "+919591488332",
+    "created_at": "2026-10-19T02:54:54.608759+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "1119e937-860f-4d4f-8902-2f9952fb5d99",
+    "user_number": "+919591488332",
+    "created_at": "2026-10-19T02:52:31.124613+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "e844c1e4-916b-4d38-a397-f441365a5386",
+    "user_number": "+918050057569",
+    "created_at": "2026-10-19T02:51:58.135508+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "2a1bddcd-f080-4963-b59f-56e4a5210e8b",
+    "user_number": "+918050057569",
+    "created_at": "2026-10-19T02:51:31.982727+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "a0a4a4b9-a9ee-49aa-8918-491544351822",
+    "user_number": "+918050057569",
+    "created_at": "2026-10-19T02:51:00.940993+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "ffe0795c-58a9-41c0-bab5-d6ab9a9dcdc4",
+    "user_number": "+919591488332",
+    "created_at": "2026-10-19T02:50:34.088529+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "b83ee829-6354-4fce-8fc4-387a21533b0f",
+    "user_number": "+919591488332",
+    "created_at": "2026-10-19T02:49:17.075308+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "96ceac54-6122-4415-93ff-fdba86591e78",
+    "user_number": "+919182799528",
+    "created_at": "2026-10-19T02:49:06.811147+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "1e5a718c-b378-4800-8318-78051430a1d7",
+    "user_number": "+919182799528",
+    "created_at": "2026-10-19T02:48:37.516993+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "295ef5d6-546e-4867-81ef-9a735d1477d2",
+    "user_number": "+919591488332",
+    "created_at": "2026-10-19T02:47:43.464475+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "3851e146-c909-4f92-859e-93fbca8e2b6d",
+    "user_number": "+919591488332",
+    "created_at": "2026-10-19T02:47:10.282355+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "07fe8c68-3025-4f6d-9fe9-61ccc13fe132",
+    "user_number": "+919591488332",
+    "created_at": "2026-10-19T02:46:40.838336+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "65dace76-bd31-4b96-9f43-5ed9bef442b9",
+    "user_number": "+919945859644",
+    "created_at": "2026-10-19T02:42:53.627259+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "3ae5534e-a11f-4f97-933a-d799a459956c",
+    "user_number": "+916363429249",
+    "created_at": "2026-10-19T02:32:03.430692+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "f18b3437-6602-4320-b670-a36b0eaa176d",
+    "user_number": "+918884715519",
+    "created_at": "2026-10-19T02:03:57.015496+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "a30a7702-fe0e-467c-895a-30cdfd2c602a",
+    "user_number": "+918884715519",
+    "created_at": "2026-10-19T01:37:09.198678+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "8d20118d-935e-43fa-ba6a-051db20e0ded",
+    "user_number": "+918884715519",
+    "created_at": "2026-10-19T01:36:11.116874+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "50edc8e7-a374-4417-8551-69bb8dae3bc5",
+    "user_number": "+917899138691",
+    "created_at": "2026-10-19T01:23:33.057960+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "ed708578-8dc0-4198-b9b7-7b8ce9e25418",
+    "user_number": "+917899138691",
+    "created_at": "2026-10-19T01:07:12.567169+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "4f5cafc0-860d-4067-bb2a-311391ff2cd0",
+    "user_number": "+917899138691",
+    "created_at": "2026-10-19T01:06:54.448067+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "a5ba8b3f-2028-4f38-83fd-36dbe31f3b9d",
+    "user_number": "+919141021175",
+    "created_at": "2026-10-19T00:02:17.984622+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "64f51734-f4da-4023-93a8-4a4c46cc5086",
+    "user_number": "+917618751152",
+    "created_at": "2026-10-18T16:02:02.677999+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "da700adb-cb67-4114-a662-0b6aa28d7406",
+    "user_number": "+919515537710",
+    "created_at": "2026-10-18T15:58:04.849767+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "07e15c05-8aa2-4d9d-a058-c4f1780aaa21",
+    "user_number": "+919515537710",
+    "created_at": "2026-10-18T15:54:49.091993+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "0c8175fd-1b68-40c2-b9f9-126f2fe197a0",
+    "user_number": "+919980499846",
+    "created_at": "2026-10-18T15:54:18.116584+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "e098ce4e-bfea-45b7-8aec-c4367696008b",
+    "user_number": "+919980499846",
+    "created_at": "2026-10-18T15:53:50.838258+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "c0ea59c0-8201-487e-ba74-c3422ee77444",
+    "user_number": "+919515537710",
+    "created_at": "2026-10-18T15:49:16.406354+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "1775cd3f-bad0-4569-9646-0013c956837e",
+    "user_number": "+919611087572",
+    "created_at": "2026-10-18T15:42:39.752342+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "579d9c35-8ddb-42a7-8f6f-7dbd83609d39",
+    "user_number": "+919611473372",
+    "created_at": "2026-10-18T15:03:18.614651+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "505a62a7-a794-42b8-be12-0b5ece537983",
+    "user_number": "+918688849856",
+    "created_at": "2026-10-18T14:56:12.616002+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "5eb29d9f-fd19-4692-8d9d-a416f662fa89",
+    "user_number": "+918688849856",
+    "created_at": "2026-10-18T14:56:00.361904+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "6ccd0711-a15d-4b74-8cab-0427f0c8744b",
+    "user_number": "+918688849856",
+    "created_at": "2026-10-18T14:55:50.301590+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "d6174f28-28ba-4578-a51f-7707a764b665",
+    "user_number": "+918970102524",
+    "created_at": "2026-10-18T14:51:37.305644+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "e300c510-9195-4e63-b29c-b27e752df2aa",
+    "user_number": "+918867669566",
+    "created_at": "2026-10-18T14:44:47.863006+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "42508ca2-649a-475a-9564-413ff34487f1",
+    "user_number": "+918867669566",
+    "created_at": "2026-10-18T14:43:06.012814+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "bdb1853b-de15-4b71-9480-d2a3df73ee6c",
+    "user_number": "+918867669566",
+    "created_at": "2026-10-18T14:42:26.439292+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "af9df05a-4dc3-48f4-8543-2aeaf789bc2d",
+    "user_number": "+918867669566",
+    "created_at": "2026-10-18T14:42:11.388824+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "b8f3936d-5188-4d7e-9570-ba7fb68c3a35",
+    "user_number": "+919113060647",
+    "created_at": "2026-10-18T14:23:45.623788+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "e4ec3a96-eb8f-4a50-8fb8-35b371d1f19e",
+    "user_number": "+918639470977",
+    "created_at": "2026-10-18T14:16:10.146036+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "631b59da-02a5-480f-affa-d46e1d3fefd4",
+    "user_number": "+918639470977",
+    "created_at": "2026-10-18T14:11:19.325627+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "77eb3385-a2fe-4d72-ab19-169733ee7e53",
+    "user_number": "+919880601475",
+    "created_at": "2026-10-18T14:05:46.571424+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "7d8cfd03-f50b-4bdc-8406-8b521a97ea9f",
+    "user_number": "+919390716883",
+    "created_at": "2026-10-18T13:56:16.652276+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "98a6fdab-24e7-4d6e-9674-bdb7337baebe",
+    "user_number": "+919390716883",
+    "created_at": "2026-10-18T13:55:47.289653+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "b3204fec-0a24-4d15-a7f7-72290ac9372b",
+    "user_number": "+919945235395",
+    "created_at": "2026-10-18T13:51:13.377774+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "7065a9a5-5c19-4be5-b60c-bc969a8aea3f",
+    "user_number": "+917204115275",
+    "created_at": "2026-10-18T13:48:11.267022+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "d6d11908-9830-428c-929e-f87c22502694",
+    "user_number": "+919036728374",
+    "created_at": "2026-10-18T13:48:03.227161+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "68a3fba7-9911-49c8-a542-ff39aff4dd2e",
+    "user_number": "+919036728374",
+    "created_at": "2026-10-18T13:47:50.586915+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "11561f60-8cc6-4e66-bdf8-54db06b34e37",
+    "user_number": "+917899276934",
+    "created_at": "2026-10-18T13:11:58.808574+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "03572e62-202d-4ba2-89f2-f7557a010934",
+    "user_number": "+917899276934",
+    "created_at": "2026-10-18T13:09:59.037669+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "fdad02ab-aa98-43df-a578-2d4d5398de7d",
+    "user_number": "+917022420116",
+    "created_at": "2026-10-18T12:54:01.275266+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "188c2a85-a200-467b-8094-f3ec5b1304a3",
+    "user_number": "+918431139138",
+    "created_at": "2026-10-18T12:53:35.634151+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "0a803684-6028-450e-ba9e-ed93229a8aa5",
+    "user_number": "+918431139138",
+    "created_at": "2026-10-18T12:53:27.512760+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "145c30de-d587-42a3-9645-ff6a3bbea22a",
+    "user_number": "+919480234202",
+    "created_at": "2026-10-18T12:50:43.603813+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "d55103d0-f36d-49dd-be47-43047ca75c32",
+    "user_number": "+919480234202",
+    "created_at": "2026-10-18T12:49:56.615895+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "33ac2d7f-5974-435b-aecd-c59336730f69",
+    "user_number": "+918639470977",
+    "created_at": "2026-10-18T12:31:00.407360+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "4a8087f6-4a31-4824-9b1f-e74683421cb5",
+    "user_number": "+918792478021",
+    "created_at": "2026-10-18T12:29:18.584384+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "730e8d46-b1cd-4e37-92fb-631f73c58c0b",
+    "user_number": "+918792478021",
+    "created_at": "2026-10-18T12:28:50.328848+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "0d3db972-6aa6-400f-aceb-a531dee0667e",
+    "user_number": "+919980480470",
+    "created_at": "2026-10-18T12:24:57.553654+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "a68380f8-2aab-4292-83d4-8deea219ad38",
+    "user_number": "+919493155555",
+    "created_at": "2026-10-18T12:09:51.747659+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "4e19704a-42e4-4bb8-8f07-198f762a3e12",
+    "user_number": "+919036546582",
+    "created_at": "2026-10-18T11:46:51.853223+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "2f8e4b65-ee26-41a1-8c30-1d46044766ed",
+    "user_number": "+919741584192",
+    "created_at": "2026-10-18T11:40:18.917349+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "53c12de2-aa28-4b18-9b97-0a0769153afc",
+    "user_number": "+917892986542",
+    "created_at": "2026-10-18T11:28:38.507154+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "94129391-129f-47e5-93af-17ba4b815115",
+    "user_number": "+917020571916",
+    "created_at": "2026-10-18T11:24:54.769974+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "29646925-e893-4bc6-b729-d0c0125015fd",
+    "user_number": "+919448591179",
+    "created_at": "2026-10-18T11:24:40.930332+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "5f5ab990-a4ff-4c3d-bffa-4afe7d3c2cac",
+    "user_number": "+917020571916",
+    "created_at": "2026-10-18T11:21:25.513293+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "d05d6d6d-a8ce-4f0d-8026-fde16dd61581",
+    "user_number": "+917020571916",
+    "created_at": "2026-10-18T11:20:24.822561+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "98890a7a-6dea-4446-92f7-b0fb870f694a",
+    "user_number": "+917020571916",
+    "created_at": "2026-10-18T11:19:54.999723+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "060e9221-e982-4bdc-8808-bd6b60b4f2d9",
+    "user_number": "+917020571916",
+    "created_at": "2026-10-18T11:19:11.247870+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "a70cdfb7-478d-4325-8279-1f2a96d32ba2",
+    "user_number": "+917996376323",
+    "created_at": "2026-10-18T10:51:23.463074+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "cc50a4dc-9646-4af4-8f17-da04d2fc304c",
+    "user_number": "+919632728795",
+    "created_at": "2026-10-18T10:28:07.658172+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "6d65024d-f537-4b3a-9407-c59d4976c4b2",
+    "user_number": "+919632728795",
+    "created_at": "2026-10-18T10:27:43.601183+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "71023d58-d078-468f-9838-630fefde757c",
+    "user_number": "+917075848809",
+    "created_at": "2026-10-18T10:09:32.408725+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "93987c8b-00ee-42c9-8062-360d6fa50ef1",
+    "user_number": "+919535968040",
+    "created_at": "2026-10-18T10:07:26.722031+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "35b74cfd-9607-4284-b95e-dc1f8787e46f",
+    "user_number": "+919535968040",
+    "created_at": "2026-10-18T10:07:22.020531+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "056e265b-3f77-4ccb-97fa-ec118f83f203",
+    "user_number": "+919535968040",
+    "created_at": "2026-10-18T10:07:16.958524+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "da396d8e-1867-4bfe-919b-9f38870d7769",
+    "user_number": "+919535968040",
+    "created_at": "2026-10-18T10:07:11.631049+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "61270370-fbdf-49ee-97c8-181a062feec2",
+    "user_number": "+919535968040",
+    "created_at": "2026-10-18T10:07:00.157019+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "e937d377-e445-467f-9b19-5156d27a741a",
+    "user_number": "+919986939287",
+    "created_at": "2026-10-18T10:05:46.963608+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "141de1a2-9684-4329-a4b8-ccf7e4c98fe4",
+    "user_number": "+919148750394",
+    "created_at": "2026-10-18T09:44:17.364207+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "d7194a06-96fa-4b40-b2d5-52d49485b959",
+    "user_number": "+919148750394",
+    "created_at": "2026-10-18T09:44:09.213894+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "f86c1d93-358d-4266-a7f9-cc19ff810752",
+    "user_number": "+919148750394",
+    "created_at": "2026-10-18T09:44:01.604587+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "90290ed8-bca3-4f49-b297-30e04de0fd28",
+    "user_number": "+919148750394",
+    "created_at": "2026-10-18T09:43:38.561507+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "4fe21e97-0485-442f-a46b-3aca0e147f36",
+    "user_number": "+919945235395",
+    "created_at": "2026-10-18T09:39:30.503494+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "5ce99651-0472-4daa-bb38-7ba8b3fc92a4",
+    "user_number": "+918310959626",
+    "created_at": "2026-10-18T09:37:10.471533+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "32b397d5-7ad6-48a0-a6cc-4a25d655b09e",
+    "user_number": "+919980288274",
+    "created_at": "2026-10-18T09:17:09.152181+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "150117b2-23af-43ff-9ada-8d7e40f0de7a",
+    "user_number": "+919980288274",
+    "created_at": "2026-10-18T09:16:48.936323+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "b59ab631-b441-43c3-bd7b-6326074cc158",
+    "user_number": "+919731124187",
+    "created_at": "2026-10-18T09:08:00.108285+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "ea3d13e9-8426-4b3f-bea7-22805990c422",
+    "user_number": "+919731124187",
+    "created_at": "2026-10-18T09:07:41.850675+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "9af721f9-7d34-4345-bb9d-5c2f9cda62f8",
+    "user_number": "+919731124187",
+    "created_at": "2026-10-18T09:07:05.510794+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "82fcd325-7245-4318-ac0b-5a5783958d2c",
+    "user_number": "+919632849806",
+    "created_at": "2026-10-18T08:52:05.765363+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "95be7acc-71ad-4d9f-b357-86371291e80a",
+    "user_number": "+919632849806",
+    "created_at": "2026-10-18T08:51:48.794882+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "d1a2062a-a5dc-4d9a-b63c-921947e13ac6",
+    "user_number": "+919739506172",
+    "created_at": "2026-10-18T08:37:25.991995+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "f9583d5a-1bd3-443b-9375-b800c27017a5",
+    "user_number": "+919502390480",
+    "created_at": "2026-10-18T08:05:08.522485+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "640bd607-7810-4bea-ba82-a28847ed5d74",
+    "user_number": "+917795579710",
+    "created_at": "2026-10-18T08:01:32.986119+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "c7c8a5b0-61a9-4da6-be7c-7d0831e5fa15",
+    "user_number": "+918105484476",
+    "created_at": "2026-10-18T07:56:59.293978+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "0f4b2d73-26c1-4473-9a35-ffc0ad65b840",
+    "user_number": "+918105484476",
+    "created_at": "2026-10-18T07:56:47.742835+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "68bd4e46-d47b-441e-a589-f460d13815f3",
+    "user_number": "+919989574263",
+    "created_at": "2026-10-18T07:53:10.472716+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "e356da71-8b52-40df-8e94-402b807640e0",
+    "user_number": "+919740041929",
+    "created_at": "2026-10-18T07:52:52.726075+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "e52d8551-ab53-4fd3-bfa7-95ad4129cd34",
+    "user_number": "+919740041929",
+    "created_at": "2026-10-18T07:49:33.503925+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "251432cc-67ba-4092-a79d-7fa7e185843f",
+    "user_number": "+919353258305",
+    "created_at": "2026-10-18T07:28:06.803547+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "3247e06f-88bd-4f30-b8a8-b056f3367bd6",
+    "user_number": "+919353258305",
+    "created_at": "2026-10-18T07:27:52.988908+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "96f9075b-d589-4af1-a857-ec11cb229221",
+    "user_number": "+919989574263",
+    "created_at": "2026-10-18T07:22:23.108125+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "37934b83-0af8-4a42-a143-a673433eb9a4",
+    "user_number": "+919989574263",
+    "created_at": "2026-10-18T07:14:41.369353+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "479fcd1e-f0fc-447e-a54d-73f1bfc7f83c",
+    "user_number": "+919989574263",
+    "created_at": "2026-10-18T07:12:55.945810+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "a6b265e8-277c-4943-84c6-e1cb77eeb641",
+    "user_number": "+919731628084",
+    "created_at": "2026-10-18T06:59:10.307117+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "733795e1-1674-4ecf-a785-543fa1519ac1",
+    "user_number": "+919731628084",
+    "created_at": "2026-10-18T06:31:22.179074+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "d19dc30f-175b-4c68-bf0f-8b587e46423e",
+    "user_number": "+919640601698",
+    "created_at": "2026-10-18T06:19:56.326865+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "efbdce71-7195-4fcf-ba1c-bf48256f0ba3",
+    "user_number": null,
+    "created_at": "2026-10-18T06:19:52.574263+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "ada0d93c-fa49-43cf-aac6-a82953faad39",
+    "user_number": null,
+    "created_at": "2026-10-18T06:19:35.746371+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "8936e2f8-b009-4e2e-b686-c2dd1d2bbe66",
+    "user_number": "+919113060647",
+    "created_at": "2026-10-18T06:19:33.618148+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "509e0845-83a0-4be2-ac0b-ec23fa7bb209",
+    "user_number": "+918919785036",
+    "created_at": "2026-10-18T06:17:50.327391+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "7f0cc8be-a386-4d8b-8e00-d31281b2a082",
+    "user_number": "+917893465383",
+    "created_at": "2026-10-18T06:14:24.961720+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "025831a8-b7bf-478b-8218-005eea8708ff",
+    "user_number": "+919986998272",
+    "created_at": "2026-10-18T06:10:14.090864+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "77637c89-749c-4d36-b683-47644e3f8385",
+    "user_number": "+916362065433",
+    "created_at": "2026-10-18T06:03:00.229581+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "5bc8f58f-8039-4501-82a1-630985e81c4d",
+    "user_number": "+917019965468",
+    "created_at": "2026-10-18T05:45:14.992303+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "e285751d-2a8e-464a-926e-890052687130",
+    "user_number": "+919481635083",
+    "created_at": "2026-10-18T05:45:01.736147+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "945a2397-55b2-45fe-82be-38ef615c7ca3",
+    "user_number": "+919481635083",
+    "created_at": "2026-10-18T05:44:39.192270+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "fbbb524f-afb7-4b85-9db4-7016d7a6d8b6",
+    "user_number": "+918855930711",
+    "created_at": "2026-10-18T05:39:35.033196+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "c4d20ee2-0125-48fc-ba8a-99dbf52fef18",
+    "user_number": "+918855930711",
+    "created_at": "2026-10-18T05:38:55.257608+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "50629678-7fba-4e36-b956-77eec6e1f58a",
+    "user_number": "+918855930711",
+    "created_at": "2026-10-18T05:38:01.614862+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "8ec5d336-9235-4aae-9af5-4ee33b25b24a",
+    "user_number": "+917019965468",
+    "created_at": "2026-10-18T05:37:12.969480+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "d32b9969-b021-4233-b150-ac02af90f95c",
+    "user_number": "+917019965468",
+    "created_at": "2026-10-18T05:36:49.478083+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "ed98846d-b68c-4b90-ab4d-cc3f92272da4",
+    "user_number": "+917019965468",
+    "created_at": "2026-10-18T05:36:10.126987+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "e6a8265c-79b6-4cb9-bfab-5e1320f5f2ec",
+    "user_number": "+918317372920",
+    "created_at": "2026-10-18T05:30:08.090012+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "756d87ce-bd9a-4b0d-ac79-f54cbd875374",
+    "user_number": "+918317372920",
+    "created_at": "2026-10-18T05:29:16.425460+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "cc9ef952-462f-40d3-9a3c-0b977da0a8fd",
+    "user_number": "+918317372920",
+    "created_at": "2026-10-18T05:28:29.044848+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "9f5914e7-3668-43ca-8bbc-f7e29a53b27c",
+    "user_number": "+918317372920",
+    "created_at": "2026-10-18T05:28:22.121004+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "10a5a1cb-3ed4-4f9f-85c8-31714790b7dd",
+    "user_number": "+918317372920",
+    "created_at": "2026-10-18T05:28:11.679798+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "77c74b17-acc5-4c25-863e-0fd1790d4429",
+    "user_number": "+917619260313",
+    "created_at": "2026-10-18T05:10:40.085408+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "40d9fe0e-e16d-4615-8d0a-4222ef1852cb",
+    "user_number": "+917893465383",
+    "created_at": "2026-10-18T05:00:18.974062+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "17dce67c-429b-4719-b7ea-bffa4a4c1683",
+    "user_number": "+919652535183",
+    "created_at": "2026-10-18T03:46:39.990886+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "6b505238-06ff-4ea8-9e67-c6c9186204ef",
+    "user_number": "+918951662144",
+    "created_at": "2026-10-18T03:44:38.740786+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "5fc46bd2-1ad0-4283-bcd3-f3a7abf40153",
+    "user_number": "+918951662144",
+    "created_at": "2026-10-18T03:44:16.501800+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "6f6f2fe1-ee11-4fd8-9a31-47a29321f673",
+    "user_number": "+919652535183",
+    "created_at": "2026-10-18T03:42:46.920524+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "f38b5870-8604-49f7-bf2b-d712fb3fa8ed",
+    "user_number": "+919148477994",
+    "created_at": "2026-10-18T03:30:22.694481+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "758d2fd8-648e-4b51-9ff6-aea08f330576",
+    "user_number": "+918123536300",
+    "created_at": "2026-10-18T03:30:13.821084+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "252c759f-9e79-4078-b5da-ed79ebd0a19f",
+    "user_number": "+919880425266",
+    "created_at": "2026-10-18T03:27:55.358341+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "a11d589b-a049-4e83-8db7-0ede7c4f1552",
+    "user_number": "+919880425266",
+    "created_at": "2026-10-18T03:26:30.552219+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "17cca4b8-83fd-4028-a406-75194680e9d5",
+    "user_number": "+919880425266",
+    "created_at": "2026-10-18T03:26:01.626020+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "85ebf0d1-01a1-4c9c-8562-a519fbf61ba4",
+    "user_number": "+919845688401",
+    "created_at": "2026-10-18T03:20:48.311881+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "2aab7e6b-7f0e-40c5-adc0-852b77515e0c",
+    "user_number": "+919900746941",
+    "created_at": "2026-10-18T03:13:04.151160+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "b0b4694e-dd2f-4010-b336-8f2582dc947e",
+    "user_number": "+919591782594",
+    "created_at": "2026-10-18T03:12:17.622555+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "38a0a4f1-e479-4300-812e-95154e7e71ac",
+    "user_number": "+919902100564",
+    "created_at": "2026-10-18T03:09:42.323739+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "071e86c1-612f-4580-8eb1-b9b5cb56eb5c",
+    "user_number": "+919902100564",
+    "created_at": "2026-10-18T03:09:18.576274+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "56f3b60b-2f65-4970-a5f3-f04fa8b5f90a",
+    "user_number": "+918855930711",
+    "created_at": "2026-10-18T03:02:03.034717+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "159ef1f0-1bcc-481c-ad43-38742196d34b",
+    "user_number": "+919740294385",
+    "created_at": "2026-10-18T03:00:21.589056+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "f462cb63-d6b3-4831-9106-c5a93aae0603",
+    "user_number": "+919740294385",
+    "created_at": "2026-10-18T02:59:18.725115+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "a887938d-7b92-4982-b4e2-59b795744e16",
+    "user_number": "+919632616331",
+    "created_at": "2026-10-18T02:42:40.948023+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "fefe1708-8252-4d99-8a04-d6103fa3d422",
+    "user_number": "+919632616331",
+    "created_at": "2026-10-18T02:42:18.726156+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "bdea9dc5-0e97-4261-b855-145debda0c15",
+    "user_number": "+919449378955",
+    "created_at": "2026-10-18T02:06:03.559992+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "2127b43f-f0bf-46e0-88a4-8bec6028787a",
+    "user_number": "+919741501089",
+    "created_at": "2026-10-18T02:02:17.230418+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "c4fe9a71-5e44-4f44-9163-22f68186070e",
+    "user_number": "+919741501089",
+    "created_at": "2026-10-18T01:48:39.353440+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "4fa6ae21-10a8-4225-88f8-6744504c2af1",
+    "user_number": "+919741501089",
+    "created_at": "2026-10-18T01:47:07.613904+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "b6504270-55e8-42c8-9d14-f752480f9b96",
+    "user_number": "+919845688401",
+    "created_at": "2026-10-18T00:39:21.907964+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "2997e86f-e153-4791-8f49-a0fc73ad27d1",
+    "user_number": "+919535942341",
+    "created_at": "2026-10-17T16:52:01.187224+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "61f50fce-6978-4e10-87b2-a6f9ddc659bc",
+    "user_number": "+919901919193",
+    "created_at": "2026-10-17T16:38:38.084606+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "d2b86c22-4a4e-4538-8456-23954869a412",
+    "user_number": "+919901919193",
+    "created_at": "2026-10-17T16:35:10.966192+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "73136eda-6465-4408-ab97-0af4692a4303",
+    "user_number": "+917975624159",
+    "created_at": "2026-10-17T15:34:29.409935+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "c9e5e57c-ac95-47e4-a7e2-41c5f3040bd6",
+    "user_number": "+917975024295",
+    "created_at": "2026-10-17T15:01:40.896647+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "8fd3515d-4395-4e70-bd72-d037720945b3",
+    "user_number": "+917975024295",
+    "created_at": "2026-10-17T14:59:28.782378+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "cbc459d8-eaea-4572-a05b-6348ae206ada",
+    "user_number": "+917975024295",
+    "created_at": "2026-10-17T14:59:13.169115+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "0a7323d1-bc35-46db-bf0f-65eea4de1741",
+    "user_number": "+917353236231",
+    "created_at": "2026-10-17T14:16:35.171819+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "ab789bb3-c23b-4fb4-8895-236462db7486",
+    "user_number": "+919059387854",
+    "created_at": "2026-10-17T14:00:39.296294+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "4d0f972b-f473-4750-bea3-b67aa5b0b567",
+    "user_number": "+919059387854",
+    "created_at": "2026-10-17T13:58:51.454238+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "7dac35ac-916b-4766-9a18-8475c8fec317",
+    "user_number": "+917349477493",
+    "created_at": "2026-10-17T13:39:35.659734+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "8d3cd5fb-135f-4b3c-b9db-1156940a4474",
+    "user_number": "+919738586442",
+    "created_at": "2026-10-17T13:12:39.133526+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "f10faf31-465e-4e08-8771-d67659012ebc",
+    "user_number": "+919738586442",
+    "created_at": "2026-10-17T13:12:25.815590+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "b611a88e-0634-4828-ad90-698fec6a8a39",
+    "user_number": "+919738586442",
+    "created_at": "2026-10-17T13:12:20.631570+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "f169e1bd-9205-4feb-a492-d53e8c0e51e1",
+    "user_number": "+919738586442",
+    "created_at": "2026-10-17T13:12:11.342063+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "8a59bacd-1ca7-49ce-b0d8-e4c9a20abb9c",
+    "user_number": "+919738586442",
+    "created_at": "2026-10-17T13:11:57.283878+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "477e75dc-5ebe-499f-887e-c19fc26a2406",
+    "user_number": "+919738586442",
+    "created_at": "2026-10-17T13:11:49.996779+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "015b7a8b-f81b-4ea8-8129-a270171842a7",
+    "user_number": "+919738586442",
+    "created_at": "2026-10-17T13:11:22.264798+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "14f52b52-511e-4156-99a6-5443b84e05e6",
+    "user_number": "+918431718551",
+    "created_at": "2026-10-17T12:26:57.521418+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "f3c63354-1716-445d-8e35-e363599c7c2b",
+    "user_number": "+919611516614",
+    "created_at": "2026-10-17T12:18:22.997821+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "e030edb5-d5eb-4148-8fb9-d5a6531b979c",
+    "user_number": "+919611516614",
+    "created_at": "2026-10-17T12:18:08.387463+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "313dd434-2036-4217-92a8-03cf89d77bc4",
+    "user_number": "+919740337865",
+    "created_at": "2026-10-17T12:12:28.242255+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "3d760d6b-8bd1-4237-a324-f77ff4296127",
+    "user_number": "+919740337865",
+    "created_at": "2026-10-17T12:11:48.753210+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "562459e4-e2ae-46bf-b07e-f3e136914df7",
+    "user_number": "+919740337865",
+    "created_at": "2026-10-17T12:11:34.492017+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "61b68a9a-36af-48e6-a27b-824d2708cfa2",
+    "user_number": "+919449332305",
+    "created_at": "2026-10-17T11:23:13.583202+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "1833ef39-e456-42eb-a1af-e0bab83b7b8f",
+    "user_number": "+919449332305",
+    "created_at": "2026-10-17T11:15:11.812381+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "cc4ef8d1-84a2-4bb6-91b1-1f6979dcaa43",
+    "user_number": "+919449332305",
+    "created_at": "2026-10-17T11:13:56.778512+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "cb13cb01-d034-475c-80a7-fc8f75b82b4c",
+    "user_number": "+918310713868",
+    "created_at": "2026-10-17T10:54:09.389122+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "c5a18593-e144-49a0-ba79-0fc500f40117",
+    "user_number": "+919036709508",
+    "created_at": "2026-10-17T10:16:03.760372+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "4de8c5bf-f0ac-426e-85b4-d742d31f1530",
+    "user_number": "+918296995741",
+    "created_at": "2026-10-17T10:15:27.958407+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "39d32925-da44-4f7e-93c3-e5440e7082c8",
+    "user_number": "+918296995741",
+    "created_at": "2026-10-17T10:13:14.036820+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "dbdabb5e-9d2b-4b95-bb0c-9ff2caf63624",
+    "user_number": "+918296995741",
+    "created_at": "2026-10-17T10:10:53.390293+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "fdf86e0e-e688-4f9a-bfe7-74a74db8d89a",
+    "user_number": "+919036709508",
+    "created_at": "2026-10-17T10:08:41.145700+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "4269e962-afbe-45b7-b8d7-3a31e829e6da",
+    "user_number": "+917708775909",
+    "created_at": "2026-10-17T10:07:05.275967+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "791a68f6-c6f6-493f-814a-6c98af82a4d9",
+    "user_number": "+917708775909",
+    "created_at": "2026-10-17T10:05:16.197898+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "a50cfdf3-d830-4a6e-ab37-4ded0f92de3c",
+    "user_number": "+917708775909",
+    "created_at": "2026-10-17T10:04:42.329755+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "e0976e52-35ba-4581-a273-543310941cd5",
+    "user_number": "+918792796110",
+    "created_at": "2026-10-17T09:37:32.333606+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "65dc4d13-a269-4890-81d5-7e49c5403f6d",
+    "user_number": "+917019553916",
+    "created_at": "2026-10-17T09:36:45.401751+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "570697df-8e4c-4191-ad12-8d831dc1cb7a",
+    "user_number": "+918073484621",
+    "created_at": "2026-10-17T09:34:42.572794+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "411d7a5e-891a-4156-b964-eba029c68012",
+    "user_number": "+918073484621",
+    "created_at": "2026-10-17T09:34:16.636057+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "5c2db409-3f9a-42e5-8305-e310a039b130",
+    "user_number": "+918073484621",
+    "created_at": "2026-10-17T09:34:05.109845+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "16f64722-d985-44bd-8eb2-fd4c78833863",
+    "user_number": "+918073484621",
+    "created_at": "2026-10-17T09:32:44.555913+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "27835716-6445-457b-b240-25b94961a570",
+    "user_number": "+917676377670",
+    "created_at": "2026-10-17T09:23:51.668782+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "ad9b3cf5-5682-43b1-988d-78622b2a0b97",
+    "user_number": "+918310726142",
+    "created_at": "2026-10-17T09:17:19.606355+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "b35a176a-b714-4f78-8062-c6577bcc84b9",
+    "user_number": "+918310726142",
+    "created_at": "2026-10-17T09:16:57.740516+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "c69845f1-fd76-47bb-a161-d8d55ff3633e",
+    "user_number": "+918310726142",
+    "created_at": "2026-10-17T09:12:20.122335+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "1a7362d8-950b-4f65-a916-5b98584d7bb3",
+    "user_number": "+918310726142",
+    "created_at": "2026-10-17T09:11:55.747983+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "a1e5fb80-8fa7-4cc3-a129-d1f000c337f6",
+    "user_number": "+916362094950",
+    "created_at": "2026-10-17T09:02:18.140535+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "4697ffee-bbf8-41cf-a92d-0c3f1e394fe0",
+    "user_number": "+919148846152",
+    "created_at": "2026-10-17T09:00:35.398287+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "7b8047a3-aa92-4a4b-a379-e8e0a7a566c1",
+    "user_number": "+916362094950",
+    "created_at": "2026-10-17T08:56:22.633466+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "0118da97-8b25-45fb-9039-02c279442080",
+    "user_number": "+919483878447",
+    "created_at": "2026-10-17T08:44:56.341557+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "1d2a3089-80bb-49f0-90e8-4eeeaa6dae19",
+    "user_number": "+919483878447",
+    "created_at": "2026-10-17T08:43:22.534868+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "797f879a-6eb0-48e8-8bcf-83961942d0e6",
+    "user_number": "+917760022193",
+    "created_at": "2026-10-17T07:35:01.569334+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "2a45e875-9ea8-4ecd-9852-524036f9d969",
+    "user_number": "+917760022193",
+    "created_at": "2026-10-17T07:34:37.726937+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "43dee80e-ba07-4f50-8459-4432290821f3",
+    "user_number": "+917760022193",
+    "created_at": "2026-10-17T07:34:23.516609+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "c0e88aa2-63e3-4b05-85e0-d8963d90ecf7",
+    "user_number": "+917760022193",
+    "created_at": "2026-10-17T07:34:05.196726+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "bce531aa-61df-4c17-82d6-54dd5ac7e1ba",
+    "user_number": "+917760022193",
+    "created_at": "2026-10-17T07:33:41.443913+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "924b8bd5-8484-4285-9ad0-52836bb2c7ae",
+    "user_number": "+917760022193",
+    "created_at": "2026-10-17T07:33:22.626483+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "4281ac23-2da0-43d9-9dcf-5c84b11daea9",
+    "user_number": "+919902032912",
+    "created_at": "2026-10-17T07:33:05.052885+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "1bcd2516-70ea-4ef7-99a6-22db5af53c58",
+    "user_number": "+918660022374",
+    "created_at": "2026-10-17T07:21:07.405081+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "0f62b0ec-d3b2-4cf7-81a2-79e198d9db07",
+    "user_number": "+918660022374",
+    "created_at": "2026-10-17T07:20:59.347734+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "625471af-c5e1-4f6b-87ba-ba2d5b55e081",
+    "user_number": "+918310089884",
+    "created_at": "2026-10-17T06:49:54.372898+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "afa30a6d-e45f-4d53-b5f8-7567ec7c7226",
+    "user_number": "+916366733658",
+    "created_at": "2026-10-17T06:05:07.424864+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "fa89e049-2cec-4d0d-9362-cdb5f2bf7e59",
+    "user_number": "+916366733658",
+    "created_at": "2026-10-17T06:03:35.496223+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "ce1a856c-af63-48aa-9673-c9f3bb72e4e9",
+    "user_number": "+916366733658",
+    "created_at": "2026-10-17T06:03:08.673286+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "b931b2a7-5c20-408c-b9f6-b824f6b0cd70",
+    "user_number": "+919845381547",
+    "created_at": "2026-10-17T05:31:56.772744+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "068752a3-b588-4a70-91d6-2ed6a9a24104",
+    "user_number": "+919845381547",
+    "created_at": "2026-10-17T05:31:30.915461+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "d72839e3-2b91-4926-82ae-0afc6f6a043c",
+    "user_number": "+919035395839",
+    "created_at": "2026-10-17T05:27:48.072384+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "13188e13-64db-4ef8-b9e7-3a535b86d510",
+    "user_number": "+919901824667",
+    "created_at": "2026-10-17T05:22:59.303253+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "32b02cb0-71e4-4044-87ed-e7b545934431",
+    "user_number": "+919035626555",
+    "created_at": "2026-10-17T05:10:21.862013+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "9c64a1b0-9654-4554-ad7e-30892ed91439",
+    "user_number": "+919449826823",
+    "created_at": "2026-10-17T05:07:01.612868+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "e2c3a155-a87b-4354-889b-ce32c5d3e312",
+    "user_number": "+918867209106",
+    "created_at": "2026-10-17T05:01:15.920488+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "61c3406b-4312-4ec7-bf7b-2355bde9e0fa",
+    "user_number": "+918073409010",
+    "created_at": "2026-10-17T05:00:20.719312+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "86853805-a174-473b-9e35-fffd7b475a4d",
+    "user_number": "+918073409010",
+    "created_at": "2026-10-17T04:55:45.163931+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "8e7896fc-64f8-4ab3-ae1d-b99589ac298e",
+    "user_number": "+918073409010",
+    "created_at": "2026-10-17T04:54:58.189262+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "d8f2f97d-774a-4e86-96df-1003cf4a030b",
+    "user_number": "+918073409010",
+    "created_at": "2026-10-17T04:54:50.217703+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "b270bc9a-5732-49db-bdee-418625a60866",
+    "user_number": "+918073409010",
+    "created_at": "2026-10-17T04:52:55.722761+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "f2e09de8-d454-4359-a0bf-d9ede20f4324",
+    "user_number": "+919844336629",
+    "created_at": "2026-10-17T04:52:55.323147+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "10c60c0e-ad21-45a7-bd9c-94faeeb65a54",
+    "user_number": "+918073409010",
+    "created_at": "2026-10-17T04:52:01.002272+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "0ebde342-35ce-462d-b934-223a92b98467",
+    "user_number": "+918073409010",
+    "created_at": "2026-10-17T04:51:46.178649+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "3cf1d5e8-bccd-40f0-88d0-b47dac347466",
+    "user_number": "+917676733371",
+    "created_at": "2026-10-17T04:49:47.049421+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "2907354d-fae9-4e97-80ba-77b63bced31a",
+    "user_number": "+918073409010",
+    "created_at": "2026-10-17T04:48:36.830418+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "83da934b-8498-4a02-b285-f284daea3757",
+    "user_number": "+918073409010",
+    "created_at": "2026-10-17T04:40:50.788765+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "c4f8f036-1049-4b1b-a5f1-63462c24025e",
+    "user_number": "+919741807938",
+    "created_at": "2026-10-17T04:34:43.536758+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "26d1a921-2109-4bc3-8f48-46d1a3aa4bd7",
+    "user_number": "+918792796110",
+    "created_at": "2026-10-17T04:34:19.955911+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "19352125-1f10-404c-bd25-058e72219de4",
+    "user_number": "+919591731074",
+    "created_at": "2026-10-17T04:22:10.767905+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "0d1d5393-0ce0-4480-a257-df6f94feafc8",
+    "user_number": "+918792796110",
+    "created_at": "2026-10-17T04:18:18.915274+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "4d628683-16ce-49c9-983e-23a647499df9",
+    "user_number": "+918792796110",
+    "created_at": "2026-10-17T04:16:32.984163+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  },
+  {
+    "id": "5f91d33e-7378-4e01-ac54-c35796040d8d",
+    "user_number": "+918792796110",
+    "created_at": "2026-10-17T04:16:23.564820+00:00",
+    "reason": "Bolna account wallet balance was low (-zsh.02) - call dropped before AI agent connected"
+  }
+]

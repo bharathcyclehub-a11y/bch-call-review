@@ -6,32 +6,43 @@ import {
   Search,
   Filter,
   RefreshCw,
-  SlidersHorizontal,
-  Flame,
   Clock,
   Users,
   Download,
   CheckCircle,
   HelpCircle,
+  AlertTriangle,
+  ChevronDown,
+  ChevronUp,
+  X,
+  Phone,
+  MessageCircle,
+  Bot,
+  Radio,
+  Flame,
 } from "lucide-react";
-import { CallRecord, CallerGroup, CallsApiResponse, FeedbackData, LeadTier } from "@/lib/types";
+import { CallRecord, CallerGroup, CallsApiResponse, FeedbackData, DroppedCall } from "@/lib/types";
 import StatsSummary from "@/components/StatsSummary";
 import CallCard from "@/components/CallCard";
 import CallerGroupCard from "@/components/CallerGroupCard";
 import ReviewFeedbackModal from "@/components/ReviewFeedbackModal";
 
 type ActiveTab = "longest" | "repeat" | "recent" | "reviewed";
+type AgentFilter = "all" | "Bolna (Ananya)" | "AutoCall";
 
 export default function HomePage() {
   const [data, setData] = useState<CallsApiResponse | null>(null);
   const [loading, setLoading] = useState(true);
   const [isSyncing, setIsSyncing] = useState(false);
   const [activeTab, setActiveTab] = useState<ActiveTab>("longest");
+  const [selectedAgent, setSelectedAgent] = useState<AgentFilter>("all");
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedTierFilter, setSelectedTierFilter] = useState<string>("all");
   const [feedbackMap, setFeedbackMap] = useState<Record<string, FeedbackData>>({});
   const [activeReviewCall, setActiveReviewCall] = useState<CallRecord | null>(null);
   const [visibleCount, setVisibleCount] = useState(25);
+  const [showDroppedModal, setShowDroppedModal] = useState(false);
+  const [droppedSearch, setDroppedSearch] = useState("");
 
   // Load feedback from localStorage on mount
   useEffect(() => {
@@ -97,11 +108,18 @@ export default function HomePage() {
       list = reviewedCallsList;
     }
 
+    // 1. Agent Filter
+    if (selectedAgent !== "all") {
+      list = list.filter((c) => c.agent === selectedAgent);
+    }
+
+    // 2. Phone Search
     if (searchQuery.trim()) {
       const q = searchQuery.toLowerCase().replace(/[^0-9]/g, "");
       list = list.filter((c) => c.from_number.replace(/[^0-9]/g, "").includes(q));
     }
 
+    // 3. Lead Tier Filter
     if (selectedTierFilter !== "all") {
       list = list.filter((c) => {
         const fb = feedbackMap[c.id];
@@ -110,12 +128,16 @@ export default function HomePage() {
     }
 
     return list;
-  }, [data, activeTab, searchQuery, selectedTierFilter, reviewedCallsList, feedbackMap]);
+  }, [data, activeTab, selectedAgent, searchQuery, selectedTierFilter, reviewedCallsList, feedbackMap]);
 
   // Filtered Repeat Callers
   const filteredGroups = useMemo(() => {
     if (!data) return [];
     let groups = data.caller_groups;
+
+    if (selectedAgent !== "all") {
+      groups = groups.filter((g) => g.agents_seen?.includes(selectedAgent as any));
+    }
 
     if (searchQuery.trim()) {
       const q = searchQuery.toLowerCase().replace(/[^0-9]/g, "");
@@ -123,7 +145,15 @@ export default function HomePage() {
     }
 
     return groups;
-  }, [data, searchQuery]);
+  }, [data, selectedAgent, searchQuery]);
+
+  // Filtered Dropped Callers
+  const filteredDropped = useMemo(() => {
+    if (!data?.dropped_callers) return [];
+    if (!droppedSearch.trim()) return data.dropped_callers;
+    const q = droppedSearch.toLowerCase().replace(/[^0-9]/g, "");
+    return data.dropped_callers.filter((d) => d.phone_number.replace(/[^0-9]/g, "").includes(q));
+  }, [data, droppedSearch]);
 
   const exportFeedbackJSON = () => {
     const jsonStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(feedbackMap, null, 2));
@@ -145,7 +175,7 @@ export default function HomePage() {
               LIVE AUTO-CALL
             </span>
           </div>
-          <p className="text-xs text-slate-400 font-mono mt-0.5">Line: +91 22 6423 1614 (Plivo)</p>
+          <p className="text-xs text-slate-400 font-mono mt-0.5">Line: +91 22 6423 1614 (Plivo & Bolna)</p>
         </div>
 
         <button
@@ -167,8 +197,87 @@ export default function HomePage() {
           totalMinutes={data.total_duration_minutes}
           uniqueCallers={data.unique_callers_count}
           reviewedCount={Object.keys(feedbackMap).length}
+          bolnaCount={data.bolna_count}
+          autoCallCount={data.autocall_count}
         />
       )}
+
+      {/* Dropped Calls Notice (Low Balance explanation) */}
+      {data && data.dropped_calls_count > 0 && (
+        <div className="bg-amber-950/30 border border-amber-800/40 rounded-xl p-3 text-xs text-amber-200/90 flex items-start justify-between gap-3 shadow-inner">
+          <div className="flex items-start gap-2">
+            <AlertTriangle className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+            <div>
+              <p className="font-semibold text-amber-300">
+                {data.dropped_calls_count} calls did not connect (Low Wallet Balance)
+              </p>
+              <p className="text-[11px] text-amber-300/80 mt-0.5 leading-relaxed">
+                Between Oct 20–21, Bolna credit was negative (-$0.02). These calls dropped before connecting and are excluded from audio review.
+              </p>
+            </div>
+          </div>
+          <button
+            onClick={() => setShowDroppedModal(true)}
+            type="button"
+            className="px-2.5 py-1.5 bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 rounded-lg font-semibold text-[11px] shrink-0 active:scale-95 transition-all"
+          >
+            View Numbers
+          </button>
+        </div>
+      )}
+
+      {/* Agent Filter Selector */}
+      <div className="flex items-center gap-1.5 bg-slate-900/60 p-1 rounded-xl border border-slate-800 text-xs font-semibold">
+        <button
+          onClick={() => {
+            setSelectedAgent("all");
+            setVisibleCount(25);
+          }}
+          type="button"
+          className={`flex-1 py-1.5 px-2 rounded-lg transition-all text-center flex items-center justify-center gap-1.5 ${
+            selectedAgent === "all"
+              ? "bg-slate-800 text-white shadow-sm"
+              : "text-slate-400 hover:text-slate-200"
+          }`}
+        >
+          <span>All Agents</span>
+          <span className="text-[10px] text-slate-500 font-mono">({data?.total_calls || 0})</span>
+        </button>
+
+        <button
+          onClick={() => {
+            setSelectedAgent("AutoCall");
+            setVisibleCount(25);
+          }}
+          type="button"
+          className={`flex-1 py-1.5 px-2 rounded-lg transition-all text-center flex items-center justify-center gap-1.5 ${
+            selectedAgent === "AutoCall"
+              ? "bg-sky-600 text-white shadow-sm font-bold"
+              : "text-slate-400 hover:text-slate-200"
+          }`}
+        >
+          <Radio className="w-3 h-3 text-sky-300" />
+          <span>AutoCall</span>
+          <span className="text-[10px] opacity-75 font-mono">({data?.autocall_count || 0})</span>
+        </button>
+
+        <button
+          onClick={() => {
+            setSelectedAgent("Bolna (Ananya)");
+            setVisibleCount(25);
+          }}
+          type="button"
+          className={`flex-1 py-1.5 px-2 rounded-lg transition-all text-center flex items-center justify-center gap-1.5 ${
+            selectedAgent === "Bolna (Ananya)"
+              ? "bg-purple-600 text-white shadow-sm font-bold"
+              : "text-slate-400 hover:text-slate-200"
+          }`}
+        >
+          <Bot className="w-3 h-3 text-purple-300" />
+          <span>Bolna</span>
+          <span className="text-[10px] opacity-75 font-mono">({data?.bolna_count || 0})</span>
+        </button>
+      </div>
 
       {/* Search Input */}
       <div className="relative">
@@ -177,7 +286,7 @@ export default function HomePage() {
           type="search"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          placeholder="Search phone number (e.g. 8660, 9449)..."
+          placeholder="Search phone number (e.g. 9449, 9008)..."
           className="w-full bg-slate-900 border border-slate-800 rounded-xl pl-10 pr-4 py-2.5 text-xs sm:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 shadow-inner"
         />
         {searchQuery && (
@@ -286,7 +395,7 @@ export default function HomePage() {
       {loading ? (
         <div className="py-20 flex flex-col items-center justify-center gap-3 text-slate-500">
           <RefreshCw className="w-8 h-8 animate-spin text-emerald-500" />
-          <p className="text-xs font-mono">Loading 615 call recordings...</p>
+          <p className="text-xs font-mono">Loading 1,112 call conversations...</p>
         </div>
       ) : activeTab === "repeat" ? (
         // Repeat Caller Groups View
@@ -348,6 +457,88 @@ export default function HomePage() {
               Load More Calls ({filteredCalls.length - visibleCount} remaining)
             </button>
           )}
+        </div>
+      )}
+
+      {/* Dropped Callers Modal */}
+      {showDroppedModal && data && (
+        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-end sm:items-center justify-center p-0 sm:p-4">
+          <div className="bg-slate-900 border border-slate-800 rounded-t-2xl sm:rounded-2xl w-full max-w-lg max-h-[90vh] flex flex-col overflow-hidden shadow-2xl">
+            <div className="p-4 border-b border-slate-800 flex items-center justify-between bg-slate-950/60">
+              <div>
+                <h3 className="font-bold text-white text-base flex items-center gap-2">
+                  <AlertTriangle className="w-4 h-4 text-amber-400" />
+                  <span>Dropped Calls (Low Balance)</span>
+                </h3>
+                <p className="text-xs text-slate-400 mt-0.5">
+                  {data.dropped_calls_count} callers between Oct 20–21 (Wallet was -$0.02)
+                </p>
+              </div>
+              <button
+                onClick={() => setShowDroppedModal(false)}
+                type="button"
+                className="h-8 w-8 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white flex items-center justify-center"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            </div>
+
+            {/* Modal Search */}
+            <div className="p-3 border-b border-slate-800 bg-slate-950/40">
+              <input
+                type="search"
+                value={droppedSearch}
+                onChange={(e) => setDroppedSearch(e.target.value)}
+                placeholder="Search dropped caller number..."
+                className="w-full bg-slate-900 border border-slate-800 rounded-xl px-3 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-amber-500"
+              />
+            </div>
+
+            {/* Dropped Callers List */}
+            <div className="p-3 overflow-y-auto space-y-2 flex-1">
+              {filteredDropped.length === 0 ? (
+                <div className="py-8 text-center text-slate-500 text-xs">No dropped callers match your search.</div>
+              ) : (
+                filteredDropped.slice(0, 50).map((d) => {
+                  const clean = d.phone_number.replace(/[^0-9]/g, "");
+                  const waUrl = `https://wa.me/${clean}?text=Hello!%20You%20recently%20tried%20calling%20Bharath%20Cycle%20Hub.%20Our%20line%20was%20busy%20at%20that%20moment.%20How%20can%20we%20assist%20you%20today?`;
+                  return (
+                    <div
+                      key={d.id}
+                      className="p-2.5 rounded-xl bg-slate-950/60 border border-slate-800 flex items-center justify-between gap-2 text-xs"
+                    >
+                      <div>
+                        <span className="font-mono font-bold text-white block">{d.phone_number}</span>
+                        <span className="text-[10px] text-slate-500">{d.date_formatted}</span>
+                      </div>
+                      <div className="flex items-center gap-1.5">
+                        <a
+                          href={waUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="px-2.5 py-1.5 rounded-lg bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border border-emerald-500/20 font-semibold text-[11px] flex items-center gap-1"
+                        >
+                          <MessageCircle className="w-3 h-3 fill-current" />
+                          <span>WhatsApp</span>
+                        </a>
+                        <a
+                          href={`tel:${d.phone_number}`}
+                          className="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 font-semibold text-[11px] flex items-center gap-1"
+                        >
+                          <Phone className="w-3 h-3" />
+                          <span>Call</span>
+                        </a>
+                      </div>
+                    </div>
+                  );
+                })
+              )}
+            </div>
+
+            <div className="p-3 border-t border-slate-800 bg-slate-950/80 text-center text-[11px] text-slate-500">
+              Showing {Math.min(50, filteredDropped.length)} of {filteredDropped.length} dropped callers
+            </div>
+          </div>
         </div>
       )}
 

@@ -1,5 +1,7 @@
-import { CallRecord, CallerGroup, CallsApiResponse } from "./types";
-import cachedCallsData from "../../data/calls_cache.json";
+import { CallRecord, CallerGroup, CallsApiResponse, DroppedCall, AgentType } from "./types";
+import cachedPlivoCalls from "../../data/calls_cache.json";
+import cachedBolnaCalls from "../../data/bolna_completed_cache.json";
+import cachedDroppedCalls from "../../data/bolna_dropped_cache.json";
 
 function formatDuration(seconds: number): string {
   const m = Math.floor(seconds / 60);
@@ -27,18 +29,58 @@ function formatDate(isoOrPlivoTime: string): string {
   }
 }
 
-export function transformRawCall(raw: any, index: number): CallRecord {
-  const durMs = parseFloat(raw.recording_duration_ms || raw.duration || 0);
-  const durSec = durMs > 1000 ? durMs / 1000 : durMs;
-  const rawFrom = String(raw.from_number || raw.caller || "Unknown").replace(/[^0-9]/g, "");
-  const formattedPhone = rawFrom.startsWith("91") ? `+${rawFrom}` : `+91${rawFrom}`;
-  const timestamp = raw.add_time || raw.created_at || new Date().toISOString();
+function cleanPhone(rawNumber: any): string {
+  const digits = String(rawNumber || "Unknown").replace(/[^0-9]/g, "");
+  if (!digits) return "+91Unknown";
+  if (digits.startsWith("91") && digits.length >= 12) {
+    return `+${digits}`;
+  }
+  return `+91${digits.slice(-10)}`;
+}
+
+export function transformBolnaCall(raw: any): CallRecord {
+  const durSec = parseFloat(raw.conversation_duration || 0);
+  const providerCallId = raw.telephony_data?.provider_call_id;
+  const rawFrom = raw.user_number || raw.telephony_data?.from_number || "Unknown";
+  const timestamp = raw.created_at || raw.initiated_at || new Date().toISOString();
 
   return {
-    id: raw.call_uuid || raw.recording_id || `call-${index}`,
+    id: raw.id,
+    recording_id: raw.id,
+    call_uuid: providerCallId || raw.id,
+    from_number: cleanPhone(rawFrom),
+    to_number: "+912264231614",
+    duration_seconds: Math.round(durSec * 10) / 10,
+    duration_ms: durSec * 1000,
+    duration_formatted: formatDuration(durSec),
+    recording_url: `/api/audio?id=${raw.id}`,
+    recording_format: "mp3",
+    timestamp,
+    date_formatted: formatDate(timestamp),
+    source: "bolna",
+    agent: "Bolna (Ananya)",
+    transcript: typeof raw.transcript === "string" ? raw.transcript : undefined,
+    summary: typeof raw.summary === "string" ? raw.summary : undefined,
+    plivo_console_url: providerCallId
+      ? `https://console.plivo.com/voice/logs/calls/${providerCallId}/`
+      : undefined,
+    hangup_reason: raw.telephony_data?.hangup_reason,
+  };
+}
+
+export function transformPlivoCall(raw: any, index: number): CallRecord {
+  // CRITICAL FIX: recording_duration_ms is always in ms. Divide by 1000 to get seconds.
+  const durMs = parseFloat(raw.recording_duration_ms || 0);
+  const durSec = durMs > 0 ? durMs / 1000 : parseFloat(raw.rounded_recording_duration || raw.duration || 0);
+  const rawFrom = raw.from_number || raw.caller || "Unknown";
+  const timestamp = raw.add_time || raw.created_at || new Date().toISOString();
+  const callUuid = raw.call_uuid || "";
+
+  return {
+    id: callUuid || raw.recording_id || `plivo-${index}`,
     recording_id: raw.recording_id || "",
-    call_uuid: raw.call_uuid || "",
-    from_number: formattedPhone,
+    call_uuid: callUuid,
+    from_number: cleanPhone(rawFrom),
     to_number: raw.to_number ? `+${String(raw.to_number).replace(/[^0-9]/g, "")}` : "+912264231614",
     duration_seconds: Math.round(durSec * 10) / 10,
     duration_ms: durMs,
@@ -48,18 +90,73 @@ export function transformRawCall(raw: any, index: number): CallRecord {
     timestamp,
     date_formatted: formatDate(timestamp),
     source: "plivo",
+    agent: "AutoCall",
+    plivo_console_url: callUuid
+      ? `https://console.plivo.com/voice/logs/calls/${callUuid}/`
+      : undefined,
   };
 }
 
-export function processCalls(rawCalls: any[]): CallsApiResponse {
-  const allCalls: CallRecord[] = rawCalls.map((r, i) => transformRawCall(r, i));
+export function getAllUnifiedCalls(freshPlivo: any[] = []): {
+  calls: CallRecord[];
+  dropped: DroppedCall[];
+} {
+  // 1. Map of Plivo calls
+  const plivoMap = new Map<string, any>();
+  for (const c of cachedPlivoCalls as any[]) {
+    const key = c.call_uuid || c.recording_id;
+    if (key) plivoMap.set(key, c);
+  }
+  for (const f of freshPlivo) {
+    const key = f.call_uuid || f.recording_id;
+    if (key) plivoMap.set(key, f);
+  }
 
-  // Sort by duration descending (longest first)
-  const longestCalls = [...allCalls].sort((a, b) => b.duration_seconds - a.duration_seconds);
+  // 2. Transform Bolna completed calls
+  const unifiedMap = new Map<string, CallRecord>();
+  const bolnaCalls = (cachedBolnaCalls as any[]).map(transformBolnaCall);
+
+  for (const bCall of bolnaCalls) {
+    // If this Bolna call has a matching Plivo recording, link Plivo's direct CDN mp3
+    if (bCall.call_uuid && plivoMap.has(bCall.call_uuid)) {
+      const plivoRaw = plivoMap.get(bCall.call_uuid);
+      if (plivoRaw.recording_url) {
+        bCall.recording_url = plivoRaw.recording_url;
+      }
+      plivoMap.delete(bCall.call_uuid); // Consumed in Bolna record
+    }
+    unifiedMap.set(bCall.id, bCall);
+  }
+
+  // 3. Add remaining Plivo calls (handled by AutoCall)
+  let idx = 0;
+  for (const [_, raw] of plivoMap.entries()) {
+    const pCall = transformPlivoCall(raw, idx++);
+    unifiedMap.set(pCall.id, pCall);
+  }
+
+  // 4. Format dropped calls (balance-low)
+  const dropped: DroppedCall[] = (cachedDroppedCalls as any[]).map((d: any) => ({
+    id: d.id,
+    phone_number: cleanPhone(d.user_number),
+    timestamp: d.created_at,
+    date_formatted: formatDate(d.created_at),
+    reason: d.reason || "Bolna account wallet balance was low (-$0.02) - dropped before AI connected",
+  }));
+
+  return {
+    calls: Array.from(unifiedMap.values()),
+    dropped,
+  };
+}
+
+export function processCalls(records: CallRecord[], dropped: DroppedCall[]): CallsApiResponse {
+  // Sort by duration descending (longest real conversations first)
+  const longestCalls = [...records].sort((a, b) => b.duration_seconds - a.duration_seconds);
 
   // Group by phone number
   const groupMap = new Map<string, CallRecord[]>();
-  for (const call of allCalls) {
+  for (const call of records) {
     const num = call.from_number;
     if (!groupMap.has(num)) {
       groupMap.set(num, []);
@@ -72,6 +169,7 @@ export function processCalls(rawCalls: any[]): CallsApiResponse {
     calls.sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
     const totalSec = calls.reduce((acc, c) => acc + c.duration_seconds, 0);
     const maxSec = Math.max(...calls.map((c) => c.duration_seconds));
+    const agents = Array.from(new Set(calls.map((c) => c.agent)));
 
     return {
       phone_number: phone,
@@ -82,6 +180,7 @@ export function processCalls(rawCalls: any[]): CallsApiResponse {
       max_duration_formatted: formatDuration(maxSec),
       first_call_time: calls[calls.length - 1].date_formatted,
       last_call_time: calls[0].date_formatted,
+      agents_seen: agents,
       calls,
     };
   });
@@ -95,42 +194,30 @@ export function processCalls(rawCalls: any[]): CallsApiResponse {
   });
 
   // Recent calls (newest first)
-  const recentCalls = [...allCalls].sort(
+  const recentCalls = [...records].sort(
     (a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime()
   );
 
-  const totalDurationSec = allCalls.reduce((acc, c) => acc + c.duration_seconds, 0);
+  const totalDurationSec = records.reduce((acc, c) => acc + c.duration_seconds, 0);
+  const bolnaCount = records.filter((c) => c.agent === "Bolna (Ananya)").length;
+  const autoCallCount = records.filter((c) => c.agent === "AutoCall").length;
 
   return {
-    total_calls: allCalls.length,
+    total_calls: records.length,
     total_duration_minutes: Math.round((totalDurationSec / 60) * 10) / 10,
     unique_callers_count: callerGroups.length,
+    bolna_count: bolnaCount,
+    autocall_count: autoCallCount,
+    dropped_calls_count: dropped.length,
+    dropped_calls_reason: "Bolna wallet balance was low (-$0.02) between Oct 20–21; calls dropped before AI agent connected.",
+    dropped_callers: dropped,
     longest_calls: longestCalls,
     caller_groups: callerGroups,
     recent_calls: recentCalls,
   };
 }
 
-export function mergeCalls(cached: any[], fresh: any[]): any[] {
-  const map = new Map<string, any>();
-
-  // 1. Load all historical cached calls
-  for (const c of cached) {
-    const key = c.call_uuid || c.recording_id;
-    if (key) map.set(key, c);
-  }
-
-  // 2. Overlay / add any fresh calls from Plivo
-  for (const f of fresh) {
-    const key = f.call_uuid || f.recording_id;
-    if (key) map.set(key, f);
-  }
-
-  return Array.from(map.values());
+export function getCachedCalls(freshPlivo: any[] = []): CallsApiResponse {
+  const { calls, dropped } = getAllUnifiedCalls(freshPlivo);
+  return processCalls(calls, dropped);
 }
-
-export function getCachedCalls(fresh: any[] = []): CallsApiResponse {
-  const merged = mergeCalls(cachedCallsData as any[], fresh);
-  return processCalls(merged);
-}
-

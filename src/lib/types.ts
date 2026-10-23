@@ -1,3 +1,5 @@
+export type AgentType = "Bolna (Ananya)" | "AutoCall";
+
 export interface CallRecord {
   id: string;
   recording_id: string;
@@ -12,6 +14,11 @@ export interface CallRecord {
   timestamp: string;
   date_formatted: string;
   source: "plivo" | "bolna";
+  agent: AgentType;
+  transcript?: string;
+  summary?: string;
+  plivo_console_url?: string;
+  hangup_reason?: string;
 }
 
 export interface CallerGroup {
@@ -23,6 +30,7 @@ export interface CallerGroup {
   max_duration_formatted: string;
   first_call_time: string;
   last_call_time: string;
+  agents_seen: AgentType[];
   calls: CallRecord[];
 }
 
@@ -42,10 +50,23 @@ export interface FeedbackData {
   reviewed_by: string;
 }
 
+export interface DroppedCall {
+  id: string;
+  phone_number: string;
+  timestamp: string;
+  date_formatted: string;
+  reason: string;
+}
+
 export interface CallsApiResponse {
   total_calls: number;
   total_duration_minutes: number;
   unique_callers_count: number;
+  bolna_count: number;
+  autocall_count: number;
+  dropped_calls_count: number;
+  dropped_calls_reason: string;
+  dropped_callers: DroppedCall[];
   longest_calls: CallRecord[];
   caller_groups: CallerGroup[];
   recent_calls: CallRecord[];
