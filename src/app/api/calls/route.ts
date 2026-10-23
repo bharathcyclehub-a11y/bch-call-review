@@ -13,28 +13,26 @@ export async function GET(request: Request) {
       const authStr = `${authId}:${authToken}`;
       const base64Auth = Buffer.from(authStr).toString("base64");
       const res = await fetch(
-        `https://api.plivo.com/v1/Account/${authId}/Recording/?limit=100`,
+        `https://api.plivo.com/v1/Account/${authId}/Recording/?limit=50`,
         {
           headers: {
             Authorization: `Basic ${base64Auth}`,
           },
-          next: { revalidate: 60 },
+          cache: "no-store",
         }
       );
       if (res.ok) {
         const data = await res.json();
         const freshObjects = data.objects || [];
-        if (freshObjects.length > 0) {
-          // Merge fresh calls with cached calls
-          return NextResponse.json(processCalls(freshObjects));
-        }
+        // Merge fresh calls on top of the 615 historical calls
+        return NextResponse.json(getCachedCalls(freshObjects));
       }
     } catch (e) {
       console.error("Live Plivo fetch failed, falling back to cache:", e);
     }
   }
 
-  // Return full cached dataset
+  // Return full cached dataset (615+ calls)
   const cached = getCachedCalls();
   return NextResponse.json(cached);
 }

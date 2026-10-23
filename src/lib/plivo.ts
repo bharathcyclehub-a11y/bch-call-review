@@ -111,6 +111,26 @@ export function processCalls(rawCalls: any[]): CallsApiResponse {
   };
 }
 
-export function getCachedCalls(): CallsApiResponse {
-  return processCalls(cachedCallsData as any[]);
+export function mergeCalls(cached: any[], fresh: any[]): any[] {
+  const map = new Map<string, any>();
+
+  // 1. Load all historical cached calls
+  for (const c of cached) {
+    const key = c.call_uuid || c.recording_id;
+    if (key) map.set(key, c);
+  }
+
+  // 2. Overlay / add any fresh calls from Plivo
+  for (const f of fresh) {
+    const key = f.call_uuid || f.recording_id;
+    if (key) map.set(key, f);
+  }
+
+  return Array.from(map.values());
 }
+
+export function getCachedCalls(fresh: any[] = []): CallsApiResponse {
+  const merged = mergeCalls(cachedCallsData as any[], fresh);
+  return processCalls(merged);
+}
+
