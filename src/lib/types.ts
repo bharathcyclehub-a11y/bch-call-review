@@ -1,6 +1,6 @@
 export type AgentType = "Bolna (Ananya)" | "AutoCall";
 
-export type LeadTier = "hot" | "warm" | "cold" | "unreviewed";
+export type LeadTier = "hot" | "warm" | "kids_waste" | "cold" | "unreviewed";
 
 export interface CallRecord {
   id: string;

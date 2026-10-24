@@ -17,7 +17,7 @@ import {
   Flame,
   CheckCircle2,
 } from "lucide-react";
-import { CallRecord, CallsApiResponse, FeedbackData } from "@/lib/types";
+import { CallRecord, CallsApiResponse, FeedbackData, CallerGroup } from "@/lib/types";
 import StatsSummary from "@/components/StatsSummary";
 import CallCard from "@/components/CallCard";
 import CallerGroupCard from "@/components/CallerGroupCard";
@@ -30,6 +30,7 @@ export default function HomePage() {
   const [loading, setLoading] = useState(true);
   const [isSyncing, setIsSyncing] = useState(false);
   const [activeTab, setActiveTab] = useState<ActiveTab>("repeat");
+  const [reviewedSubTab, setReviewedSubTab] = useState<"clusters" | "calls">("clusters");
   const [selectedAgent, setSelectedAgent] = useState<AgentFilter>("all");
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedTierFilter, setSelectedTierFilter] = useState<string>("all");
@@ -112,6 +113,9 @@ export default function HomePage() {
   const totalCalls = data?.total_calls || 0;
   const pendingCount = Math.max(0, totalCalls - reviewedCount);
 
+  // Check if a caller group has received any feedback
+  const isGroupReviewed = (g: CallerGroup) => g.calls.some((c) => !!feedbackMap[c.id]);
+
   const reviewedCallsList = useMemo(() => {
     if (!data) return [];
     const reviewedIds = new Set(Object.keys(feedbackMap));
@@ -150,17 +154,22 @@ export default function HomePage() {
     if (selectedTierFilter !== "all") {
       list = list.filter((c) => {
         const fb = feedbackMap[c.id];
-        return fb?.lead_tier === selectedTierFilter;
+        if (!fb) return false;
+        if (selectedTierFilter === "kids_waste") {
+          return fb.lead_tier === "kids_waste" || fb.lead_tier === "cold";
+        }
+        return fb.lead_tier === selectedTierFilter;
       });
     }
 
     return list;
   }, [data, activeTab, selectedAgent, searchQuery, selectedTierFilter, reviewedCallsList, feedbackMap]);
 
-  // Filtered Repeat Callers
+  // Filtered Pending Repeat Callers (Automatically moves reviewed clusters out!)
   const filteredGroups = useMemo(() => {
     if (!data) return [];
-    let groups = data.caller_groups;
+    // Only show unreviewed caller groups in this pending task view
+    let groups = data.caller_groups.filter((g) => !isGroupReviewed(g));
 
     if (selectedAgent !== "all") {
       groups = groups.filter((g) => g.agents_seen?.includes(selectedAgent as any));
@@ -177,7 +186,42 @@ export default function HomePage() {
     }
 
     return groups;
-  }, [data, selectedAgent, searchQuery]);
+  }, [data, selectedAgent, searchQuery, feedbackMap]);
+
+  // Filtered Reviewed Clusters (Those that received feedback)
+  const reviewedGroups = useMemo(() => {
+    if (!data) return [];
+    let groups = data.caller_groups.filter((g) => isGroupReviewed(g));
+
+    if (selectedAgent !== "all") {
+      groups = groups.filter((g) => g.agents_seen?.includes(selectedAgent as any));
+    }
+
+    if (searchQuery.trim()) {
+      const q = searchQuery.toLowerCase().trim();
+      const numOnly = q.replace(/[^0-9]/g, "");
+      groups = groups.filter((g) => {
+        const phoneMatch = numOnly.length > 0 && g.phone_number.replace(/[^0-9]/g, "").includes(numOnly);
+        const leadMatch = g.calls.some((c) => c.lead_id && c.lead_id.toLowerCase().includes(q));
+        return phoneMatch || leadMatch;
+      });
+    }
+
+    if (selectedTierFilter !== "all") {
+      groups = groups.filter((g) => {
+        return g.calls.some((c) => {
+          const fb = feedbackMap[c.id];
+          if (!fb) return false;
+          if (selectedTierFilter === "kids_waste") {
+            return fb.lead_tier === "kids_waste" || fb.lead_tier === "cold";
+          }
+          return fb.lead_tier === selectedTierFilter;
+        });
+      });
+    }
+
+    return groups;
+  }, [data, selectedAgent, searchQuery, selectedTierFilter, feedbackMap]);
 
   // Filtered Dropped Callers
   const filteredDropped = useMemo(() => {
@@ -332,13 +376,13 @@ export default function HomePage() {
           )}
         </div>
 
-        {/* Lead Tier filter pills: ONLY Hot, Warm, Cold */}
+        {/* Lead Tier filter pills: ONLY Hot, Warm, Kids Waste Lead */}
         <div className="flex items-center gap-1.5 overflow-x-auto pb-1 text-[11px] font-medium no-scrollbar">
           {[
             { id: "all", label: "All Leads" },
             { id: "hot", label: "🔥 Hot" },
             { id: "warm", label: "⚡ Warm" },
-            { id: "cold", label: "❄️ Cold" },
+            { id: "kids_waste", label: "🧒 Kids Waste Lead" },
           ].map((t) => (
             <button
               key={t.id}
@@ -372,7 +416,7 @@ export default function HomePage() {
         >
           <Users className="w-3.5 h-3.5" />
           <span>Repeated Clusters</span>
-          <span className="text-[9px] opacity-80 font-mono">({filteredGroups.length} callers)</span>
+          <span className="text-[9px] opacity-80 font-mono">({filteredGroups.length} pending)</span>
         </button>
 
         <button
@@ -420,9 +464,9 @@ export default function HomePage() {
       <div className="flex items-center justify-between text-xs text-slate-400 px-1">
         <span>
           {activeTab === "repeat"
-            ? `Showing ${Math.min(visibleCount, filteredGroups.length)} of ${filteredGroups.length} repeat caller clusters`
+            ? `Showing ${Math.min(visibleCount, filteredGroups.length)} of ${filteredGroups.length} pending clusters`
             : activeTab === "reviewed"
-            ? `Showing ${filteredCalls.length} reviewed calls`
+            ? `Showing ${reviewedSubTab === "clusters" ? reviewedGroups.length : filteredCalls.length} reviewed ${reviewedSubTab === "clusters" ? "clusters" : "calls"}`
             : `Showing ${Math.min(visibleCount, filteredCalls.length)} of ${filteredCalls.length} pending calls`}
         </span>
 
@@ -438,6 +482,34 @@ export default function HomePage() {
         )}
       </div>
 
+      {/* If in Reviewed Tab: Toggle between Reviewed Clusters & All Reviewed Calls */}
+      {activeTab === "reviewed" && reviewedCount > 0 && (
+        <div className="flex items-center gap-2 bg-slate-900/50 p-1 rounded-xl border border-slate-800 text-xs">
+          <button
+            type="button"
+            onClick={() => setReviewedSubTab("clusters")}
+            className={`flex-1 py-1.5 rounded-lg font-semibold transition-all ${
+              reviewedSubTab === "clusters"
+                ? "bg-slate-800 text-white shadow-sm"
+                : "text-slate-400 hover:text-slate-200"
+            }`}
+          >
+            Reviewed Clusters ({reviewedGroups.length})
+          </button>
+          <button
+            type="button"
+            onClick={() => setReviewedSubTab("calls")}
+            className={`flex-1 py-1.5 rounded-lg font-semibold transition-all ${
+              reviewedSubTab === "calls"
+                ? "bg-slate-800 text-white shadow-sm"
+                : "text-slate-400 hover:text-slate-200"
+            }`}
+          >
+            All Reviewed Calls ({filteredCalls.length})
+          </button>
+        </div>
+      )}
+
       {/* Content Feed */}
       {loading ? (
         <div className="py-20 flex flex-col items-center justify-center gap-3 text-slate-500">
@@ -445,10 +517,14 @@ export default function HomePage() {
           <p className="text-xs font-mono">Loading calls...</p>
         </div>
       ) : activeTab === "repeat" ? (
-        // Repeat Caller Groups View (Primary default tab)
+        // Repeat Caller Groups View (Pending Task View - Automatically clears as reviewed!)
         <div className="space-y-3">
           {filteredGroups.length === 0 ? (
-            <div className="py-12 text-center text-slate-500 text-xs">No repeat callers match your search.</div>
+            <div className="py-16 text-center text-slate-500 text-xs flex flex-col items-center gap-2">
+              <CheckCircle2 className="w-8 h-8 text-emerald-400" />
+              <span className="text-sm font-semibold text-white">All Repeat Caller Clusters Reviewed!</span>
+              <span className="text-slate-400">Great job! All pending repeated clusters have been qualified.</span>
+            </div>
           ) : (
             filteredGroups.slice(0, visibleCount).map((group, idx) => (
               <CallerGroupCard
@@ -471,23 +547,63 @@ export default function HomePage() {
             </button>
           )}
         </div>
+      ) : activeTab === "reviewed" ? (
+        // Reviewed Tab View (Shows moved reviewed clusters and/or calls)
+        <div className="space-y-3">
+          {reviewedCount === 0 ? (
+            <div className="py-16 text-center text-slate-500 text-xs flex flex-col items-center gap-2">
+              <HelpCircle className="w-6 h-6 text-slate-600" />
+              <span>You haven't reviewed any leads yet. Review any cluster lead to move it here!</span>
+            </div>
+          ) : reviewedSubTab === "clusters" ? (
+            // Show Reviewed Clusters
+            reviewedGroups.length === 0 ? (
+              <div className="py-12 text-center text-slate-500 text-xs">No reviewed clusters match your query.</div>
+            ) : (
+              reviewedGroups.slice(0, visibleCount).map((group, idx) => (
+                <CallerGroupCard
+                  key={group.phone_number}
+                  group={group}
+                  rank={idx + 1}
+                  feedbackMap={feedbackMap}
+                  onSaveFeedback={handleSaveFeedback}
+                />
+              ))
+            )
+          ) : (
+            // Show All Reviewed Individual Calls
+            filteredCalls.length === 0 ? (
+              <div className="py-12 text-center text-slate-500 text-xs">No reviewed calls match your query.</div>
+            ) : (
+              filteredCalls.slice(0, visibleCount).map((call, idx) => (
+                <CallCard
+                  key={call.id}
+                  call={call}
+                  feedback={feedbackMap[call.id]}
+                  onSaveFeedback={handleSaveFeedback}
+                />
+              ))
+            )
+          )}
+
+          {visibleCount < (reviewedSubTab === "clusters" ? reviewedGroups.length : filteredCalls.length) && (
+            <button
+              onClick={() => setVisibleCount((prev) => prev + 25)}
+              type="button"
+              className="w-full py-3 rounded-xl bg-slate-900 border border-slate-800 text-xs font-semibold text-slate-300 hover:text-white"
+            >
+              Load More
+            </button>
+          )}
+        </div>
       ) : (
-        // Individual Calls View (Recent Pending or Reviewed)
+        // Recent Pending Individual Calls View
         <div className="space-y-3">
           {filteredCalls.length === 0 ? (
             <div className="py-16 text-center text-slate-500 text-xs flex flex-col items-center gap-2">
-              {activeTab === "reviewed" ? (
-                <>
-                  <HelpCircle className="w-6 h-6 text-slate-600" />
-                  <span>You haven't reviewed any calls yet. Tap 'Review Lead' on any call card to start!</span>
-                </>
-              ) : (
-                <>
-                  <CheckCircle2 className="w-8 h-8 text-emerald-400" />
-                  <span className="text-sm font-semibold text-white">All Pending Calls Cleared!</span>
-                  <span className="text-slate-400">Great job! No calls waiting for review.</span>
-                </>
-              )}
+              <CheckCircle2 className="w-8 h-8 text-emerald-400" />
+              <span className="text-sm font-semibold text-white">All Recent Calls Cleared!</span>
+              <span className="text-slate-400">Great job! No calls waiting for review.</span>
             </div>
           ) : (
             filteredCalls.slice(0, visibleCount).map((call, idx) => (

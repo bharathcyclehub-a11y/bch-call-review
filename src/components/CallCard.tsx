@@ -85,8 +85,9 @@ export default function CallCard({ call, rank, feedback, onSaveFeedback }: CallC
         return <span className="px-2 py-0.5 rounded-full text-[11px] font-bold bg-red-500/20 text-red-400 border border-red-500/30">🔥 Hot</span>;
       case "warm":
         return <span className="px-2 py-0.5 rounded-full text-[11px] font-bold bg-amber-500/20 text-amber-400 border border-amber-500/30">⚡ Warm</span>;
+      case "kids_waste":
       case "cold":
-        return <span className="px-2 py-0.5 rounded-full text-[11px] font-bold bg-blue-500/20 text-blue-400 border border-blue-500/30">❄️ Cold</span>;
+        return <span className="px-2 py-0.5 rounded-full text-[11px] font-bold bg-rose-500/20 text-rose-300 border border-rose-500/30">🧒 Kids Waste Lead</span>;
       default:
         return null;
     }
@@ -312,14 +313,14 @@ export default function CallCard({ call, rank, feedback, onSaveFeedback }: CallC
 
               <button
                 type="button"
-                onClick={() => setLeadTier("cold")}
-                className={`py-2 px-2 rounded-xl border text-xs font-bold flex items-center justify-center gap-1.5 transition-all active:scale-95 ${
-                  leadTier === "cold"
-                    ? "bg-blue-500/20 text-blue-300 border-blue-500 ring-2 ring-blue-500/40 shadow-sm"
+                onClick={() => setLeadTier("kids_waste")}
+                className={`py-2 px-1 rounded-xl border text-[11px] sm:text-xs font-bold flex items-center justify-center gap-1 transition-all active:scale-95 ${
+                  leadTier === "kids_waste" || leadTier === "cold"
+                    ? "bg-rose-500/20 text-rose-300 border-rose-500 ring-2 ring-rose-500/40 shadow-sm"
                     : "bg-slate-900 border-slate-800 text-slate-400 hover:text-slate-200"
                 }`}
               >
-                <span>❄️ Cold</span>
+                <span>🧒 Kids Waste Lead</span>
               </button>
             </div>
           </div>

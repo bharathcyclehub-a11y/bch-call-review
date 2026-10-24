@@ -23,6 +23,9 @@ export default function CallerGroupCard({
   const cleanPhone = group.phone_number.replace(/[^0-9]/g, "");
   const waUrl = `https://wa.me/${cleanPhone}?text=Hello!%20Thank%20you%20for%20contacting%20Bharath%20Cycle%20Hub.%20How%20can%20we%20assist%20you%20today?`;
 
+  const reviewedCall = group.calls.find((c) => !!feedbackMap[c.id]);
+  const groupFeedback = reviewedCall ? feedbackMap[reviewedCall.id] : undefined;
+
   return (
     <div className="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-sm transition-all">
       {/* Group Header */}
@@ -44,11 +47,30 @@ export default function CallerGroupCard({
           </span>
 
           <div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 flex-wrap">
               <span className="font-mono font-bold text-white text-base">
                 {group.phone_number}
               </span>
-              {group.total_calls >= 10 && (
+              {groupFeedback && (
+                <>
+                  {groupFeedback.lead_tier === "hot" && (
+                    <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-red-500/20 text-red-300 border border-red-500/30">
+                      🔥 Hot
+                    </span>
+                  )}
+                  {groupFeedback.lead_tier === "warm" && (
+                    <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30">
+                      ⚡ Warm
+                    </span>
+                  )}
+                  {(groupFeedback.lead_tier === "kids_waste" || groupFeedback.lead_tier === "cold") && (
+                    <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-rose-500/20 text-rose-300 border border-rose-500/30">
+                      🧒 Kids Waste Lead
+                    </span>
+                  )}
+                </>
+              )}
+              {group.total_calls >= 10 && !groupFeedback && (
                 <span className="px-1.5 py-0.5 rounded text-[10px] font-bold bg-red-500/20 text-red-400 uppercase tracking-wider flex items-center gap-1">
                   <ShieldAlert className="w-3 h-3" /> Urgent
                 </span>
