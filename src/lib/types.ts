@@ -1,7 +1,10 @@
 export type AgentType = "Bolna (Ananya)" | "AutoCall";
 
+export type LeadTier = "hot" | "warm" | "cold" | "unreviewed";
+
 export interface CallRecord {
   id: string;
+  lead_id: string; // 4-digit unique series e.g. "#1001", "#1002"
   recording_id: string;
   call_uuid: string;
   from_number: string;
@@ -34,18 +37,16 @@ export interface CallerGroup {
   calls: CallRecord[];
 }
 
-export type LeadTier = "hot" | "warm" | "cold" | "kids" | "service" | "spam" | "unreviewed";
-
 export interface FeedbackData {
   call_id: string;
   phone_number: string;
-  lead_tier: LeadTier;
-  agent_rating: number; // 1-5
-  tags: string[]; // e.g. "Price Hallucination", "Interrupted Caller", "Script Glitch", "Great Empathy"
-  feedback?: string; // Single comprehensive feedback box
-  customer_query?: string; // What caller asked (backward compat)
-  agent_response_notes?: string; // How agent responded (backward compat)
-  general_notes?: string; // Reviewer feedback (backward compat)
+  lead_tier: LeadTier | string;
+  agent_rating?: number;
+  tags?: string[];
+  feedback?: string;
+  customer_query?: string;
+  agent_response_notes?: string;
+  general_notes?: string;
   reviewed_at: string;
   updated_at?: string;
   reviewed_by: string;

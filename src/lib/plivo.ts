@@ -1,4 +1,4 @@
-import { CallRecord, CallerGroup, CallsApiResponse, DroppedCall, AgentType } from "./types";
+import { CallRecord, CallerGroup, CallsApiResponse, DroppedCall } from "./types";
 import cachedPlivoCalls from "../../data/calls_cache.json";
 import cachedBolnaCalls from "../../data/bolna_completed_cache.json";
 import cachedDroppedCalls from "../../data/bolna_dropped_cache.json";
@@ -46,6 +46,7 @@ export function transformBolnaCall(raw: any): CallRecord {
 
   return {
     id: raw.id,
+    lead_id: "", // Assigned chronologically
     recording_id: raw.id,
     call_uuid: providerCallId || raw.id,
     from_number: cleanPhone(rawFrom),
@@ -69,7 +70,6 @@ export function transformBolnaCall(raw: any): CallRecord {
 }
 
 export function transformPlivoCall(raw: any, index: number): CallRecord {
-  // CRITICAL FIX: recording_duration_ms is always in ms. Divide by 1000 to get seconds.
   const durMs = parseFloat(raw.recording_duration_ms || 0);
   const durSec = durMs > 0 ? durMs / 1000 : parseFloat(raw.rounded_recording_duration || raw.duration || 0);
   const rawFrom = raw.from_number || raw.caller || "Unknown";
@@ -78,6 +78,7 @@ export function transformPlivoCall(raw: any, index: number): CallRecord {
 
   return {
     id: callUuid || raw.recording_id || `plivo-${index}`,
+    lead_id: "", // Assigned chronologically
     recording_id: raw.recording_id || "",
     call_uuid: callUuid,
     from_number: cleanPhone(rawFrom),
@@ -97,19 +98,15 @@ export function transformPlivoCall(raw: any, index: number): CallRecord {
   };
 }
 
-export function getAllUnifiedCalls(freshPlivo: any[] = []): {
+export function getAllUnifiedCalls(sourcePlivo: any[] = []): {
   calls: CallRecord[];
   dropped: DroppedCall[];
 } {
-  // 1. Map of Plivo calls
   const plivoMap = new Map<string, any>();
-  for (const c of cachedPlivoCalls as any[]) {
+  const basePlivo = sourcePlivo.length > 0 ? sourcePlivo : (cachedPlivoCalls as any[]);
+  for (const c of basePlivo) {
     const key = c.call_uuid || c.recording_id;
     if (key) plivoMap.set(key, c);
-  }
-  for (const f of freshPlivo) {
-    const key = f.call_uuid || f.recording_id;
-    if (key) plivoMap.set(key, f);
   }
 
   // 2. Transform Bolna completed calls
@@ -117,25 +114,32 @@ export function getAllUnifiedCalls(freshPlivo: any[] = []): {
   const bolnaCalls = (cachedBolnaCalls as any[]).map(transformBolnaCall);
 
   for (const bCall of bolnaCalls) {
-    // If this Bolna call has a matching Plivo recording, link Plivo's direct CDN mp3
     if (bCall.call_uuid && plivoMap.has(bCall.call_uuid)) {
       const plivoRaw = plivoMap.get(bCall.call_uuid);
       if (plivoRaw.recording_url) {
         bCall.recording_url = plivoRaw.recording_url;
       }
-      plivoMap.delete(bCall.call_uuid); // Consumed in Bolna record
+      plivoMap.delete(bCall.call_uuid);
     }
     unifiedMap.set(bCall.id, bCall);
   }
 
-  // 3. Add remaining Plivo calls (handled by AutoCall)
+  // 3. Add Plivo calls (handled by AutoCall)
   let idx = 0;
   for (const [_, raw] of plivoMap.entries()) {
     const pCall = transformPlivoCall(raw, idx++);
     unifiedMap.set(pCall.id, pCall);
   }
 
-  // 4. Format dropped calls (balance-low)
+  // 4. Assign deterministic 4-digit Lead IDs (#1001, #1002...) chronologically
+  const allCalls = Array.from(unifiedMap.values()).sort(
+    (a, b) => new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime()
+  );
+  allCalls.forEach((call, i) => {
+    call.lead_id = `#${1001 + i}`;
+  });
+
+  // 5. Format dropped calls (balance-low)
   const dropped: DroppedCall[] = (cachedDroppedCalls as any[]).map((d: any) => ({
     id: d.id,
     phone_number: cleanPhone(d.user_number),
@@ -145,13 +149,13 @@ export function getAllUnifiedCalls(freshPlivo: any[] = []): {
   }));
 
   return {
-    calls: Array.from(unifiedMap.values()),
+    calls: allCalls,
     dropped,
   };
 }
 
 export function processCalls(records: CallRecord[], dropped: DroppedCall[]): CallsApiResponse {
-  // Sort by duration descending (longest real conversations first)
+  // Sort by duration descending
   const longestCalls = [...records].sort((a, b) => b.duration_seconds - a.duration_seconds);
 
   // Group by phone number
@@ -217,7 +221,7 @@ export function processCalls(records: CallRecord[], dropped: DroppedCall[]): Cal
   };
 }
 
-export function getCachedCalls(freshPlivo: any[] = []): CallsApiResponse {
-  const { calls, dropped } = getAllUnifiedCalls(freshPlivo);
+export function getCachedCalls(sourcePlivo: any[] = []): CallsApiResponse {
+  const { calls, dropped } = getAllUnifiedCalls(sourcePlivo);
   return processCalls(calls, dropped);
 }

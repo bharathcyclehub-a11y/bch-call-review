@@ -9,14 +9,14 @@ interface CallerGroupCardProps {
   group: CallerGroup;
   rank: number;
   feedbackMap: Record<string, FeedbackData>;
-  onOpenReview: (call: CallRecord) => void;
+  onSaveFeedback?: (feedback: FeedbackData) => void;
 }
 
 export default function CallerGroupCard({
   group,
   rank,
   feedbackMap,
-  onOpenReview,
+  onSaveFeedback,
 }: CallerGroupCardProps) {
   const [isExpanded, setIsExpanded] = useState(rank <= 3); // Top 3 expanded by default
 
@@ -109,7 +109,7 @@ export default function CallerGroupCard({
               call={call}
               rank={idx + 1}
               feedback={feedbackMap[call.id]}
-              onOpenReview={onOpenReview}
+              onSaveFeedback={onSaveFeedback}
             />
           ))}
         </div>

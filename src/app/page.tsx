@@ -4,7 +4,6 @@ import React, { useState, useEffect, useMemo } from "react";
 import {
   Search,
   RefreshCw,
-  Clock,
   Users,
   Download,
   CheckCircle,
@@ -18,25 +17,23 @@ import {
   Flame,
   CheckCircle2,
 } from "lucide-react";
-import { CallRecord, CallsApiResponse, FeedbackData, DroppedCall } from "@/lib/types";
+import { CallRecord, CallsApiResponse, FeedbackData } from "@/lib/types";
 import StatsSummary from "@/components/StatsSummary";
 import CallCard from "@/components/CallCard";
 import CallerGroupCard from "@/components/CallerGroupCard";
-import ReviewFeedbackModal from "@/components/ReviewFeedbackModal";
 
-type ActiveTab = "longest" | "repeat" | "recent" | "reviewed";
+type ActiveTab = "repeat" | "recent" | "reviewed";
 type AgentFilter = "all" | "Bolna (Ananya)" | "AutoCall";
 
 export default function HomePage() {
   const [data, setData] = useState<CallsApiResponse | null>(null);
   const [loading, setLoading] = useState(true);
   const [isSyncing, setIsSyncing] = useState(false);
-  const [activeTab, setActiveTab] = useState<ActiveTab>("longest");
+  const [activeTab, setActiveTab] = useState<ActiveTab>("repeat");
   const [selectedAgent, setSelectedAgent] = useState<AgentFilter>("all");
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedTierFilter, setSelectedTierFilter] = useState<string>("all");
   const [feedbackMap, setFeedbackMap] = useState<Record<string, FeedbackData>>({});
-  const [activeReviewCall, setActiveReviewCall] = useState<CallRecord | null>(null);
   const [visibleCount, setVisibleCount] = useState(25);
   const [showDroppedModal, setShowDroppedModal] = useState(false);
   const [droppedSearch, setDroppedSearch] = useState("");
@@ -118,25 +115,19 @@ export default function HomePage() {
   const reviewedCallsList = useMemo(() => {
     if (!data) return [];
     const reviewedIds = new Set(Object.keys(feedbackMap));
-    return data.longest_calls.filter((c) => reviewedIds.has(c.id));
+    return data.recent_calls.filter((c) => reviewedIds.has(c.id));
   }, [data, feedbackMap]);
 
-  // Filtered Calls for Longest / Recent / Reviewed tabs
+  // Filtered Calls for Recent Pending / Reviewed tabs
   const filteredCalls = useMemo(() => {
     if (!data) return [];
     let list: CallRecord[] = [];
 
     if (activeTab === "reviewed") {
-      // Show ALL reviewed calls
       list = reviewedCallsList;
-    } else if (activeTab === "longest") {
-      // TASK QUEUE: Longest calls that are PENDING REVIEW (unreviewed)
-      list = data.longest_calls.filter((c) => !feedbackMap[c.id]);
-    } else if (activeTab === "recent") {
-      // Recent calls that are PENDING REVIEW
-      list = data.recent_calls.filter((c) => !feedbackMap[c.id]);
     } else {
-      list = data.longest_calls;
+      // "recent" (Pending Review)
+      list = data.recent_calls.filter((c) => !feedbackMap[c.id]);
     }
 
     // 1. Agent Filter
@@ -144,10 +135,15 @@ export default function HomePage() {
       list = list.filter((c) => c.agent === selectedAgent);
     }
 
-    // 2. Phone Search
+    // 2. Search Filter (Phone Number or 4-digit Lead ID)
     if (searchQuery.trim()) {
-      const q = searchQuery.toLowerCase().replace(/[^0-9]/g, "");
-      list = list.filter((c) => c.from_number.replace(/[^0-9]/g, "").includes(q));
+      const q = searchQuery.toLowerCase().trim();
+      const numOnly = q.replace(/[^0-9]/g, "");
+      list = list.filter((c) => {
+        const phoneMatch = numOnly.length > 0 && c.from_number.replace(/[^0-9]/g, "").includes(numOnly);
+        const leadMatch = c.lead_id && c.lead_id.toLowerCase().includes(q);
+        return phoneMatch || leadMatch;
+      });
     }
 
     // 3. Lead Tier Filter
@@ -171,8 +167,13 @@ export default function HomePage() {
     }
 
     if (searchQuery.trim()) {
-      const q = searchQuery.toLowerCase().replace(/[^0-9]/g, "");
-      groups = groups.filter((g) => g.phone_number.replace(/[^0-9]/g, "").includes(q));
+      const q = searchQuery.toLowerCase().trim();
+      const numOnly = q.replace(/[^0-9]/g, "");
+      groups = groups.filter((g) => {
+        const phoneMatch = numOnly.length > 0 && g.phone_number.replace(/[^0-9]/g, "").includes(numOnly);
+        const leadMatch = g.calls.some((c) => c.lead_id && c.lead_id.toLowerCase().includes(q));
+        return phoneMatch || leadMatch;
+      });
     }
 
     return groups;
@@ -214,7 +215,7 @@ export default function HomePage() {
           disabled={isSyncing}
           type="button"
           className="p-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white flex items-center gap-1.5 text-xs font-semibold active:scale-95 transition-all"
-          title="Sync fresh calls"
+          title="Sync fresh calls from Plivo"
         >
           <RefreshCw className={`w-3.5 h-3.5 text-emerald-400 ${isSyncing ? "animate-spin" : ""}`} />
           <span className="hidden sm:inline">Sync</span>
@@ -318,7 +319,7 @@ export default function HomePage() {
             type="search"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="Search phone number (e.g. 9449, 9008)..."
+            placeholder="Search phone or Lead ID (e.g. #1042, 9449)..."
             className="w-full bg-slate-900 border border-slate-800 rounded-xl pl-10 pr-4 py-2.5 text-xs sm:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 shadow-inner"
           />
           {searchQuery && (
@@ -331,22 +332,19 @@ export default function HomePage() {
           )}
         </div>
 
-        {/* Lead Tier filter pills */}
-        <div className="flex items-center gap-1 overflow-x-auto pb-1 text-[11px] font-medium no-scrollbar">
+        {/* Lead Tier filter pills: ONLY Hot, Warm, Cold */}
+        <div className="flex items-center gap-1.5 overflow-x-auto pb-1 text-[11px] font-medium no-scrollbar">
           {[
-            { id: "all", label: "All Tiers" },
+            { id: "all", label: "All Leads" },
             { id: "hot", label: "🔥 Hot" },
             { id: "warm", label: "⚡ Warm" },
-            { id: "kids", label: "🧒 Kids" },
             { id: "cold", label: "❄️ Cold" },
-            { id: "service", label: "🛠️ Service" },
-            { id: "spam", label: "🚫 Spam" },
           ].map((t) => (
             <button
               key={t.id}
               type="button"
               onClick={() => setSelectedTierFilter(t.id)}
-              className={`px-2.5 py-1 rounded-lg border whitespace-nowrap transition-colors ${
+              className={`px-3 py-1 rounded-lg border whitespace-nowrap transition-colors ${
                 selectedTierFilter === t.id
                   ? "bg-slate-700 border-slate-500 text-white font-semibold"
                   : "bg-slate-900 border-slate-800 text-slate-400 hover:text-slate-300"
@@ -358,25 +356,8 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* Task Queue Tabs: Longest (Pending), Repeaters, Recent (Pending), Reviewed */}
-      <div className="grid grid-cols-4 gap-1 bg-slate-900/90 p-1 rounded-xl border border-slate-800 text-xs font-semibold">
-        <button
-          onClick={() => {
-            setActiveTab("longest");
-            setVisibleCount(25);
-          }}
-          type="button"
-          className={`py-2 rounded-lg transition-all text-center flex flex-col items-center gap-0.5 relative ${
-            activeTab === "longest"
-              ? "bg-emerald-600 text-white shadow-sm font-bold"
-              : "text-slate-400 hover:text-slate-200"
-          }`}
-        >
-          <Clock className="w-3.5 h-3.5" />
-          <span>Longest</span>
-          <span className="text-[9px] opacity-80 font-mono">Pending</span>
-        </button>
-
+      {/* 3 Main Tabs: Repeaters (Clusters) [Default], Recent (Pending), Reviewed */}
+      <div className="grid grid-cols-3 gap-1.5 bg-slate-900/90 p-1 rounded-xl border border-slate-800 text-xs font-semibold">
         <button
           onClick={() => {
             setActiveTab("repeat");
@@ -390,8 +371,8 @@ export default function HomePage() {
           }`}
         >
           <Users className="w-3.5 h-3.5" />
-          <span>Repeaters</span>
-          <span className="text-[9px] opacity-80 font-mono">Clusters</span>
+          <span>Repeated Clusters</span>
+          <span className="text-[9px] opacity-80 font-mono">({filteredGroups.length} callers)</span>
         </button>
 
         <button
@@ -407,7 +388,7 @@ export default function HomePage() {
           }`}
         >
           <Flame className="w-3.5 h-3.5" />
-          <span>Recent</span>
+          <span>Recent Calls</span>
           <span className="text-[9px] opacity-80 font-mono">Pending</span>
         </button>
 
@@ -439,7 +420,7 @@ export default function HomePage() {
       <div className="flex items-center justify-between text-xs text-slate-400 px-1">
         <span>
           {activeTab === "repeat"
-            ? `Showing ${filteredGroups.length} repeat caller clusters`
+            ? `Showing ${Math.min(visibleCount, filteredGroups.length)} of ${filteredGroups.length} repeat caller clusters`
             : activeTab === "reviewed"
             ? `Showing ${filteredCalls.length} reviewed calls`
             : `Showing ${Math.min(visibleCount, filteredCalls.length)} of ${filteredCalls.length} pending calls`}
@@ -452,7 +433,7 @@ export default function HomePage() {
             className="flex items-center gap-1 text-emerald-400 hover:text-emerald-300 font-semibold"
           >
             <Download className="w-3.5 h-3.5" />
-            <span>Export Notes</span>
+            <span>Export Reviews</span>
           </button>
         )}
       </div>
@@ -461,10 +442,10 @@ export default function HomePage() {
       {loading ? (
         <div className="py-20 flex flex-col items-center justify-center gap-3 text-slate-500">
           <RefreshCw className="w-8 h-8 animate-spin text-emerald-500" />
-          <p className="text-xs font-mono">Loading 1,112 call conversations...</p>
+          <p className="text-xs font-mono">Loading calls...</p>
         </div>
       ) : activeTab === "repeat" ? (
-        // Repeat Caller Groups View
+        // Repeat Caller Groups View (Primary default tab)
         <div className="space-y-3">
           {filteredGroups.length === 0 ? (
             <div className="py-12 text-center text-slate-500 text-xs">No repeat callers match your search.</div>
@@ -475,7 +456,7 @@ export default function HomePage() {
                 group={group}
                 rank={idx + 1}
                 feedbackMap={feedbackMap}
-                onOpenReview={(call) => setActiveReviewCall(call)}
+                onSaveFeedback={handleSaveFeedback}
               />
             ))
           )}
@@ -491,25 +472,20 @@ export default function HomePage() {
           )}
         </div>
       ) : (
-        // Individual Calls View (Longest Pending, Recent Pending, Reviewed)
+        // Individual Calls View (Recent Pending or Reviewed)
         <div className="space-y-3">
           {filteredCalls.length === 0 ? (
             <div className="py-16 text-center text-slate-500 text-xs flex flex-col items-center gap-2">
-              {activeTab === "longest" && pendingCount === 0 ? (
-                <>
-                  <CheckCircle2 className="w-8 h-8 text-emerald-400" />
-                  <span className="text-sm font-semibold text-white">All Longest Calls Reviewed!</span>
-                  <span className="text-slate-400">Great job! You have cleared all pending longest calls.</span>
-                </>
-              ) : activeTab === "reviewed" ? (
+              {activeTab === "reviewed" ? (
                 <>
                   <HelpCircle className="w-6 h-6 text-slate-600" />
                   <span>You haven't reviewed any calls yet. Tap 'Review Lead' on any call card to start!</span>
                 </>
               ) : (
                 <>
-                  <HelpCircle className="w-6 h-6 text-slate-600" />
-                  <span>No calls found matching your query.</span>
+                  <CheckCircle2 className="w-8 h-8 text-emerald-400" />
+                  <span className="text-sm font-semibold text-white">All Pending Calls Cleared!</span>
+                  <span className="text-slate-400">Great job! No calls waiting for review.</span>
                 </>
               )}
             </div>
@@ -518,9 +494,8 @@ export default function HomePage() {
               <CallCard
                 key={call.id}
                 call={call}
-                rank={activeTab === "longest" ? idx + 1 : undefined}
                 feedback={feedbackMap[call.id]}
-                onOpenReview={(call) => setActiveReviewCall(call)}
+                onSaveFeedback={handleSaveFeedback}
               />
             ))
           )}
@@ -617,17 +592,6 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-      )}
-
-      {/* Review & Feedback Modal */}
-      {activeReviewCall && (
-        <ReviewFeedbackModal
-          call={activeReviewCall}
-          isOpen={!!activeReviewCall}
-          onClose={() => setActiveReviewCall(null)}
-          existingFeedback={feedbackMap[activeReviewCall.id]}
-          onSaveFeedback={handleSaveFeedback}
-        />
       )}
     </div>
   );
